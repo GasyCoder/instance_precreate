@@ -1,0 +1,48 @@
+# =================================
+# Fichiers/dossiers Node & Composer
+# =================================
+/node_modules/
+/vendor/
+
+# =================================
+# Fichiers/dossiers de build
+# =================================
+# /public/build/
+/public/hot/
+/public/storage/
+
+# =================================
+# Clés et données sensibles
+# =================================
+/storage/*.key
+
+# =================================
+# Fichiers .env
+# =================================
+.env
+.env.backup
+.env.production
+
+# =================================
+# Autres fichiers spécifiques
+# =================================
+/database/dolibarr-20.zip
+.phpactor.json
+.phpunit.cache
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+
+# =================================
+# Logs
+# =================================
+npm-debug.log
+yarn-error.log
+
+# =================================
+# Configs d’IDE et autres
+# =================================
+/.fleet/
+/.idea/
+/.vscode/

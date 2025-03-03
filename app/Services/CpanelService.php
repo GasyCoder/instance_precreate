@@ -19,7 +19,7 @@ class CpanelService
         $cpanel_user = $this->config['user'];
         $api_token = $this->config['token'];
         $main_domain = $this->config['main_domain'];
-        $document_root = '/home7/sc1sylg/sante.gasikara.com';
+        $document_root = '/home7/sc1sylg/sante.gasikara.mg';
 
         $cpsess = $this->config['cpsess'];
 

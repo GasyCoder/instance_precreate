@@ -124,8 +124,8 @@ class DatabaseServiceInnov
                 ->where('id', 1)
                 ->update([
                     'name' => $instanceName,
-                    'api_key' => $instances_free['api_key'],
-                    'url_dolibarr' => $instances_free['url'],
+                    'api_key' => $instances_free->api_key,
+                    'url_dolibarr' => $instances_free->url,
                     'plan_id' => $subscription->plan_id,
                     'sub_plan_id' => $subscription->sub_plan_id,
                     'email' => $userEmail,

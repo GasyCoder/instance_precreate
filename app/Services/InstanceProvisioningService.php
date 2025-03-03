@@ -39,9 +39,6 @@ class InstanceProvisioningService
         $instance_id = "ad62ff0728deff79f830a2b69cf68aae";
         $api_key = $this->apiService->dolEncryptApi($api_key_dolibarr, $instance_id);
         
-        //Mise à jours base de donnée Dolibarr
-        $this->databaseServiceDolibarr->updateCredentials($dbName, $api_key);
-        
         //Mise à jours base de donnée Innov
         $this->databaseServiceInnov->updateCredentialsInnov($dbNameInnov, $instanceName, $api_key_dolibarr, $password, $userEmail, $subscriptionId);
         

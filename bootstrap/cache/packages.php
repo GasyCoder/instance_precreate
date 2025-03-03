@@ -1,13 +1,13 @@
 <?php return array (
   'jantinnerezo/livewire-alert' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Jantinnerezo\\LivewireAlert\\LivewireAlertServiceProvider',
-    ),
     'aliases' => 
     array (
       'LivewireAlert' => 'Jantinnerezo\\LivewireAlert\\LivewireAlertFacade',
+    ),
+    'providers' => 
+    array (
+      0 => 'Jantinnerezo\\LivewireAlert\\LivewireAlertServiceProvider',
     ),
   ),
   'laravel-lang/actions' => 

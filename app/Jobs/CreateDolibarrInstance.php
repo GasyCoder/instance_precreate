@@ -75,7 +75,7 @@ class CreateDolibarrInstance implements ShouldQueue
                     'name' => $this->instanceData['name'],
                     'login' => $this->user->email,
                     'password' => $this->instanceData['password_dolibarr'],
-                    'url' => "http://" . $this->instanceData['name'] . ".erpinnov.com",
+                    'url' => "http://" . $this->instanceData['name'] . ".gasikara.mg",
                 ]));
             }
         } catch (\Exception $e) {

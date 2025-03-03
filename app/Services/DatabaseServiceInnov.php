@@ -122,7 +122,7 @@ class DatabaseServiceInnov
                 ->update([
                     'name' => $instanceName,
                     'api_key' => $api_key_dolibarr,
-                    'url_dolibarr' => 'http://'. $instanceName . '-dolibarr.erpinnov.com',
+                    'url_dolibarr' => 'http://'. $instanceName . '-dolibarr.gasikara.mg',
                     'plan_id' => $subscription->plan_id,
                     'sub_plan_id' => $subscription->sub_plan_id,
                     'email' => $userEmail,

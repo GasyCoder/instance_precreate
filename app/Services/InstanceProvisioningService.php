@@ -47,7 +47,7 @@ class InstanceProvisioningService
         
         //Enregistrement du sous-domaine et base de donnée propre au instance crée qui est utilisé pour Innov
         Subdomain::create([
-            'subdomain' => 'http://' . $instanceName . '.erpinnov.com',
+            'subdomain' => 'http://' . $instanceName . '.gasikara.mg',
             'database_name' => $dbNameInnov
         ]);
         

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use App\Models\Subscription;
+use App\Models\InstanceQuota;
 
 class DatabaseServiceInnov
 {
@@ -117,6 +118,9 @@ class DatabaseServiceInnov
             
             $subsciption = Subscription::find($subscription_id);
 
+            $instance_free = InstanceQuota::find('statut', 'libre');
+            dd($instance_free);
+            
             DB::connection('dynamic')->table('users')
                 ->where('id', 1)
                 ->update([

@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use App\Models\DolibarrCredential;
+use App\Models\InstanceQuota;
 use App\Events\InstanceCreatedEvent;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\InstanceCreated;
@@ -36,15 +37,16 @@ class FastInstanceProvisioningService {
                     'url' => $instanceDetails['url']
                 ]);
 
+                $instance_free = InstanceQuota::where('statut', 'libre')->first();
                 // Création utilisateur Innov
                 $newUsersInnov = new CreateUsersInnov();
                 $newUsersInnov->insertIntoOtherDb(
                     $instanceDetails['db_name'],
                     $instanceData['name'],
                     $user->email,
-                    $instanceData['api_key_dolibarr'],
+                    $instance_free->api_key,
                     $instanceData['password_dolibarr'],
-                    "http://" . $instanceData['name'] . '-dolibarr.gasikara.mg',
+                    "http://" . $instance_free->url,
                     $instance['subscription_id']
                 );
 

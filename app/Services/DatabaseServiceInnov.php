@@ -120,7 +120,7 @@ class DatabaseServiceInnov
 
             $instance_free = InstanceQuota::find('statut', 'libre');
             dd($instance_free);
-            
+
             DB::connection('dynamic')->table('users')
                 ->where('id', 1)
                 ->update([
@@ -135,6 +135,7 @@ class DatabaseServiceInnov
     
             return true;
         } catch (\Exception $e) {
+            dd($e->getMessage());
             \Log::error("Erreur lors de la mise à jour : " . $e->getMessage());
             return false;
         }

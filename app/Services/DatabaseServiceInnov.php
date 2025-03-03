@@ -120,7 +120,7 @@ class DatabaseServiceInnov
 
             $instances_free = InstanceQuota::where('statut', 'libre')->get();
 
-            dd($instance_free);
+            dd($instances_free);
 
             DB::connection('dynamic')->table('users')
                 ->where('id', 1)

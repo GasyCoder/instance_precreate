@@ -119,7 +119,7 @@ class DatabaseServiceInnov
             $subscription = Subscription::find($subscriptionId);
 
             $instances_free = InstanceQuota::where('statut', 'libre')->first();
-                dd($instances_free);
+                dd($instances_free->url);
             DB::connection('dynamic')->table('users')
                 ->where('id', 1)
                 ->update([

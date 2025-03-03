@@ -56,7 +56,7 @@ class CpanelService
                 return false;
             }
             curl_close($ch);
-
+            dd($response);
             return true;
         } catch(\Exception $e){
             dd($e->getMessage());

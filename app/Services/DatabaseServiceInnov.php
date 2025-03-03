@@ -118,16 +118,14 @@ class DatabaseServiceInnov
             
             $subsciption = Subscription::find($subscriptionId);
 
-            $instances_free = InstanceQuota::where('statut', 'libre')->get();
-
-            dd($instances_free);
+            $instances_free = InstanceQuota::where('statut', 'libre')->first();
 
             DB::connection('dynamic')->table('users')
                 ->where('id', 1)
                 ->update([
                     'name' => $instanceName,
-                    'api_key' => $api_key_dolibarr,
-                    'url_dolibarr' => 'http://'. $instanceName . '-dolibarr.gasikara.mg',
+                    'api_key' => $instances_free['api_key'],
+                    'url_dolibarr' => $instances_free['url'],
                     'plan_id' => $subscription->plan_id,
                     'sub_plan_id' => $subscription->sub_plan_id,
                     'email' => $userEmail,

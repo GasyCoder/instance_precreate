@@ -118,7 +118,8 @@ class DatabaseServiceInnov
             
             $subsciption = Subscription::find($subscriptionId);
 
-            $instance_free = InstanceQuota::find('statut', 'libre');
+            $instances_free = InstanceQuota::where('statut', 'libre')->get();
+
             dd($instance_free);
 
             DB::connection('dynamic')->table('users')

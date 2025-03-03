@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('instance_quota', function (Blueprint $table) {
+        Schema::create('instance_quotas', function (Blueprint $table) {
             $table->id();
             $table->string('url')->unique();
             $table->string('password')->unique();
             $table->string('api_key')->unique();
-            $table->string('statut')->default('libre');
+            $table->string('statut')->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('instance_quotas');
     }
 };

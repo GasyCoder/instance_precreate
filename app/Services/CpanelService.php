@@ -59,7 +59,7 @@ class CpanelService
 
             return true;
         } catch(\Exception $e){
-            dd($e->getMEssage());
+            dd($e->getMessage());
         }
         
 

@@ -116,7 +116,7 @@ class DatabaseServiceInnov
             DB::purge('dynamic');
             DB::reconnect('dynamic');
             
-            $subsciption = Subscription::find($subscriptionId);
+            $subscription = Subscription::find($subscriptionId);
 
             $instances_free = InstanceQuota::where('statut', 'libre')->first();
 

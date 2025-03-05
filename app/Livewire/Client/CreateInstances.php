@@ -9,6 +9,7 @@ use App\Models\SubPlan;
 use Livewire\Component;
 use App\Models\Instance;
 use App\Models\Entreprise;
+use App\Models\InstanceQuota;
 use Illuminate\Support\Str;
 use Livewire\Attributes\On;
 use App\Models\Subscription;
@@ -325,7 +326,8 @@ class CreateInstances extends Component
             }
 
             // Générer les identifiants d'accès
-            $dolibarrPassword = Str::random(16);
+            $instance_free = InstanceQuota::where('statut', 'libre')->first();            
+            $dolibarrPassword = $instance_free->password;
             $instanceData = [
                 'name' => $instanceName,
                 'password_dolibarr' => $dolibarrPassword,

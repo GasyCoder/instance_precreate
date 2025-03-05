@@ -41,13 +41,6 @@
                     <input type="text" wire:model="api_key" id="url" class="form-control">
                     @error('api_key') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
-                <div class="mb-3">
-                    <label for="statut" class="form-label">Statut</label>
-                    <select wire:model="statut" id="statut" class="form-select">
-                        <option value="libre">Libre</option>
-                        <option value="attribué">Attribué</option>
-                    </select>
-                </div>
                 <button type="submit" class="btn btn-primary">Ajouter</button>
             </form>
         </div>

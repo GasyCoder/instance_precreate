@@ -37,7 +37,9 @@ class FastInstanceProvisioningService {
                     'url' => $instanceDetails['url']
                 ]);
 
+                //Rechèrche la prémière instance libre
                 $instance_free = InstanceQuota::where('statut', 'libre')->first();
+
                 // Création utilisateur Innov
                 $newUsersInnov = new CreateUsersInnov();
                 $newUsersInnov->insertIntoOtherDb(
@@ -49,6 +51,12 @@ class FastInstanceProvisioningService {
                     "http://" . $instance_free->url,
                     $instance['subscription_id']
                 );
+
+                //Mise à jours du statut de l'instance après assignation à un client
+                $instance_free->statut = 'atrribué';
+
+                // Enregistrer les modifications dans la base de données
+                $instance_free->save();
 
                 // Notifications
                 broadcast(new InstanceCreatedEvent($instance));

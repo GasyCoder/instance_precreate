@@ -40,7 +40,7 @@ class InstanceManager extends Component
 
         $this->reset(['url', 'password', 'api_key', 'statut']);
         $this->updateCounts();
-        $this->emit('instanceAdded'); // Rafraîchit la liste
+        $this->dispatch('instanceAdded'); // Rafraîchit la liste
     }
 
     public function render()

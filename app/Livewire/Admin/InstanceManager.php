@@ -30,7 +30,6 @@ class InstanceManager extends Component
 
     public function addInstance()
     {
-        $this->validate();
 
         InstanceQuota::create([
             'url' => $this->url,

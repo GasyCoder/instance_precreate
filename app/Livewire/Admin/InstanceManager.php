@@ -44,7 +44,7 @@ class InstanceManager extends Component
 
     public function render()
     {
-        return view('livewire.instance-manager', [
+        return view('livewire.admin.instance-manager', [
             'instances' => InstanceQuota::all(),
         ]);
     }

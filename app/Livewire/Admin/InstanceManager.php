@@ -3,7 +3,7 @@
 namespace App\Livewire\Admin;
 
 use Livewire\Component;
-use App\Models\Instance;
+use App\Models\InstanceQuota;
 
 class InstanceManager extends Component
 {
@@ -23,8 +23,8 @@ class InstanceManager extends Component
 
     public function updateCounts()
     {
-        $this->libres = Instance::where('statut', 'libre')->count();
-        $this->attribues = Instance::where('statut', 'attribué')->count();
+        $this->libres = InstanceQuota::where('statut', 'libre')->count();
+        $this->attribues = InstanceQuota::where('statut', 'attribué')->count();
     }
 
     public function addInstance()
@@ -45,7 +45,7 @@ class InstanceManager extends Component
     public function render()
     {
         return view('livewire.instance-manager', [
-            'instances' => Instance::all(),
+            'instances' => InstanceQuota::all(),
         ]);
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Livewire\Payment\PricingPlan;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Payment\FactureClient;
+use App\Livewire\Admin\InstanceManager;
 use App\Livewire\Client\CreateInstances;
 use App\Livewire\Payment\PaymentProcess;
 use App\Http\Controllers\ProfileController;
@@ -64,6 +65,8 @@ Route::middleware(['auth'])->group(function () {
 
 
         Route::get('/payment/upgrade/{uuid}/{instance?}', PaymentProcess::class)->name('payment.upgrade');
+
+        Route::get('/admin', InstanceManager::class)->name('admin');
     });
 
 

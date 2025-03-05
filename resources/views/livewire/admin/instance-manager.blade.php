@@ -60,16 +60,16 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nom</th>
                         <th>URL</th>
+                        <th>Api key</th>
                         <th>Statut</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($instances as $instance)
                     <tr>
-                        <td>{{ $instance->nom }}</td>
                         <td><a href="{{ $instance->url }}" target="_blank">{{ $instance->url }}</a></td>
+                        <td>{{ $instance->api_key }}</td>
                         <td>
                             <span class="badge {{ $instance->statut == 'libre' ? 'bg-success' : 'bg-danger' }}">
                                 {{ ucfirst($instance->statut) }}

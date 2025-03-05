@@ -4,6 +4,7 @@ namespace App\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\InstanceQuota;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class InstanceManager extends Component
 {
@@ -30,17 +31,21 @@ class InstanceManager extends Component
 
     public function addInstance()
     {
-
-        InstanceQuota::create([
-            'url' => $this->url,
-            'password' => $this->password,
-            'api_key' => $this->api_key,
-            'statut' => $this->statut,
-        ]);
-
-        $this->reset(['url', 'password', 'api_key', 'statut']);
-        $this->updateCounts();
-        $this->dispatch('instanceAdded'); // Rafraîchit la liste
+        try{
+            InstanceQuota::create([
+                'url' => $this->url,
+                'password' => $this->password,
+                'api_key' => $this->api_key,
+                'statut' => $this->statut,
+            ]);
+    
+            $this->reset(['url', 'password', 'api_key', 'statut']);
+            $this->updateCounts();
+            $this->dispatch('instanceAdded'); // Rafraîchit la liste
+        } catch(\Exception $e){
+            $this->alert('error', 'Erreur lors de l\'ajout de l\'instance: ' . $e->getMessage());
+        }
+        
     }
 
     public function render()

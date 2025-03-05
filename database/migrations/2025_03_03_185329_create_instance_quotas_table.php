@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('url')->unique();
             $table->string('password')->unique();
             $table->string('api_key')->unique();
-            $table->string('statut')->unique();
+            $table->string('statut');
             $table->timestamps();
         });
     }

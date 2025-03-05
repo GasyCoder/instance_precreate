@@ -135,7 +135,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="flex items-center px-4 bg-gray-50 border-l border-gray-200 text-sm text-gray-500">
-                                                        .gasikara.mg
+                                                        .erpinnov.com
                                                     </div>
                                                 </div>
                                                 @error('name')

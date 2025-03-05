@@ -6,7 +6,7 @@
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
-                , Conçu par <a href="https://digital.gasikara.mg" target="_blank" class="fw-medium">Gasikara Digital</a>
+                , Conçu par <a href="https://digital.erpinnov.com" target="_blank" class="fw-medium">Gasikara Digital</a>
             </div>
             <div class="d-none d-lg-inline-block">
                 <a href="#" class="footer-link me-4" target="_blank">License</a>

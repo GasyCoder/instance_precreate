@@ -56,7 +56,7 @@ class FastInstanceProvisioningService {
                     'name' => $instanceData['name'],
                     'login' => $user->email,
                     'password' => $instanceData['password_dolibarr'],
-                    'url' => "http://" . $instanceData['name'] . "gasikara.mg",
+                    'url' => "http://" . $instanceData['name'] . "erpinnov.com",
                 ]);
 
                 return true;

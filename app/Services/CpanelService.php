@@ -20,7 +20,7 @@ class CpanelService
             $cpanel_user = $this->config['user'];
             $api_token = $this->config['token'];
             $main_domain = $this->config['main_domain'];
-            $document_root = '/home7/sc1sylg/sante.gasikara.mg';
+            $document_root = '/home7/sc1sylg/instance.erpinnov.com';
 
             $cpsess = $this->config['cpsess'];
 
@@ -41,7 +41,7 @@ class CpanelService
             curl_close($ch);
 
             $subDomain = $suffixSubDomain . "." . $main_domain;
-            $url = "https://$cpanel_host:2083/" . $cpsess . "/execute/DNS/add_zone_record?domain=gasikara.mg&type=A&name=$subDomain&address=109.234.160.27";
+            $url = "https://$cpanel_host:2083/" . $cpsess . "/execute/DNS/add_zone_record?domain=erpinnov.com&type=A&name=$subDomain&address=109.234.160.27";
 
             $ch = curl_init($url);
 

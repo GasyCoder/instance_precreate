@@ -236,7 +236,7 @@ class CreateInstances extends Component
             'name' => $instanceName,
             'entreprise_id' => $entreprise->id,
             'status' => ($selectedPlan['is_free'] ?? false) ? 'pending' : 'active',
-            'url' => $instanceName . '.gasikara.mg',
+            'url' => $instanceName . '.erpinnov.com',
             'auth_token' => Instance::generateUniqueAuthToken(),
             'dolibarr_username' => $instanceData['login_dolibarr'],
             'dolibarr_password' => Hash::make($instanceData['password_dolibarr']),
@@ -343,7 +343,7 @@ class CreateInstances extends Component
                 'name' => $instanceName,
                 'entreprise_id' => $entreprise->id,
                 'status' => 'active',
-                'url' => $instanceName . '.gasikara.mg',
+                'url' => $instanceName . '.erpinnov.com',
                 'auth_token' => Instance::generateUniqueAuthToken(),
                 'dolibarr_username' => $instanceData['login_dolibarr'],
                 'dolibarr_password' => Hash::make($dolibarrPassword),
@@ -364,7 +364,7 @@ class CreateInstances extends Component
                 'name' => $instance->name,
                 'login' => $user->email,
                 'password' => $dolibarrPassword,
-                'url' => "http://" . $instance->name . ".gasikara.mg",
+                'url' => "http://" . $instance->name . ".erpinnov.com",
                 'created_at' => now(),
                 'created_by' => $user->email
             ];

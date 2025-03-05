@@ -43,7 +43,7 @@ class Instance extends Model
 
     public function getUrlAttribute($value)
     {
-        return 'http://' . $this->name . '.gasikara.mg';
+        return 'http://' . $this->name . '.erpinnov.com';
     }
 
     public function user()

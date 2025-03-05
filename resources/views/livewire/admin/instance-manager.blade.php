@@ -27,14 +27,19 @@
         <div class="card-body">
             <form wire:submit.prevent="addInstance">
                 <div class="mb-3">
-                    <label for="nom" class="form-label">Nom de l'instance</label>
-                    <input type="text" wire:model="nom" id="nom" class="form-control">
-                    @error('nom') <span class="text-danger">{{ $message }}</span> @enderror
-                </div>
-                <div class="mb-3">
                     <label for="url" class="form-label">URL</label>
                     <input type="url" wire:model="url" id="url" class="form-control">
                     @error('url') <span class="text-danger">{{ $message }}</span> @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" wire:model="password" id="password" class="form-control">
+                    @error('password') <span class="text-danger">{{ $message }}</span> @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="api_key" class="form-label">Api Key</label>
+                    <input type="text" wire:model="api_key" id="url" class="form-control">
+                    @error('api_key') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
                 <div class="mb-3">
                     <label for="statut" class="form-label">Statut</label>

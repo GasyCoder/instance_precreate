@@ -7,12 +7,13 @@ use App\Models\InstanceQuota;
 
 class InstanceManager extends Component
 {
-    public $nom, $url, $statut = 'libre';
+    public $url, $password, $api_key, $statut = 'libre';
     public $libres, $attribues;
     
     protected $rules = [
-        'nom' => 'required|string|unique:instances',
         'url' => 'required|url|unique:instances',
+        'password' => 'required|password|unique',
+        'api_key' => 'requierd|api_key|unique',
         'statut' => 'required|in:libre,attribué',
     ];
 
@@ -31,13 +32,14 @@ class InstanceManager extends Component
     {
         $this->validate();
 
-        Instance::create([
-            'nom' => $this->nom,
+        InstanceQuota::create([
             'url' => $this->url,
+            'password' => $this->password,
+            'api_key' => $this->api_key,
             'statut' => $this->statut,
         ]);
 
-        $this->reset(['nom', 'url', 'statut']);
+        $this->reset(['url', 'password', 'api_key', 'statut']);
         $this->updateCounts();
         $this->emit('instanceAdded'); // Rafraîchit la liste
     }

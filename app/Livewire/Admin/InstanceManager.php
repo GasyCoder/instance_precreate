@@ -18,8 +18,7 @@ class InstanceManager extends Component
         'url' => 'required|url|unique:instances',
         'password' => 'required|password|unique',
         'api_key' => 'requierd|api_key|unique',
-        'statut' => 'required|in:libre,attribué',
-        'db_name' => 'required|in:db_name|unique'
+        'statut' => 'required|in:libre,attribué'
     ];
 
     public function mount()

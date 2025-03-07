@@ -39,7 +39,7 @@ class DatabaseServiceDolibarr
                 "lastactivationversion" => "dolibarr"
             ];
 
-            DB::connection('dynamic_connection')->table('llx2n_const')->insert([
+            DB::connection('dynamic')->table('llx2n_const')->insert([
                 [
                     'name' => 'MAIN_MODULE_API',
                     'entity' => '0',

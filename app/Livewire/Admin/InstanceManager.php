@@ -40,6 +40,7 @@ class InstanceManager extends Component
                 'password' => $this->password,
                 'api_key' => $this->api_key,
                 'statut' => $this->statut,
+                'db_name' => $this->db_name
             ]);
     
             $this->reset(['url', 'password', 'api_key', 'statut']);

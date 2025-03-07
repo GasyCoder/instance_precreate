@@ -43,7 +43,7 @@ class InstanceProvisioningService
         $api_key = $this->apiService->dolEncryptApi($api_key_dolibarr, $instance_id);
 
         //Mise à jours de l'api key de l'instance après assignation à un client
-        $instance_free->api_key = $api_key;
+        $instance_free->api_key = $api_key_dolibarr;
 
         // Enregistrer les modifications dans la base de données
         $instance_free->save();

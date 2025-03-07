@@ -73,7 +73,7 @@ class DatabaseServiceDolibarr
         }
     }
     
-    public function updateCredentials($instance_free, $api_key)
+    public function updateCredentials($instance_free, $api_key_dolibarr)
     {
         try {
             config(['database.connections.dynamic' => [
@@ -95,7 +95,7 @@ class DatabaseServiceDolibarr
             DB::connection('dynamic')->table($instance_free->prefix.'_user')
                 ->where('rowid', 1)
                 ->update([
-                    'api_key' => $api_key
+                    'api_key' => $api_key_dolibarr
                 ]);
     
             return true;
@@ -103,12 +103,5 @@ class DatabaseServiceDolibarr
             \Log::error("Erreur lors de la mise à jour : " . $e->getMessage());
             return false;
         }
-    }
-    
-    private function cryptDolibarrPassword($password)
-    {
-        // Implémentez ici la méthode de cryptage utilisée par Dolibarr
-        // Par exemple, si Dolibarr utilise password_hash :
-        return password_hash($password, PASSWORD_DEFAULT);
     }
 }

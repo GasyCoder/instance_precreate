@@ -84,7 +84,7 @@ class InstanceManager extends Component
             die("Une ou plusieurs valeurs manquent !");
         }
 
-        dd($db_user . db_pass . $instanceId);
+        dd($db_user . $db_pass . $instanceId);
         // Insère dans la base de données Laravel
         /*DB::table('ton_table')->insert([
             'db_user' => $dbUser,

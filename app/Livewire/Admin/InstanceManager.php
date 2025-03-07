@@ -70,9 +70,9 @@ class InstanceManager extends Component
         $configContent = file_get_contents($filePath);
 
         // Recherche les valeurs des variables avec des expressions régulières
-        preg_match("/\\$dolibarr_main_db_pass\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPass);
-        preg_match("/\\$dolibarr_main_db_user\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchUser);
-        preg_match("/\\$dolibarr_main_instance_unique_id\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchId);
+        preg_match("/\\\$dolibarr_main_db_pass\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPass);
+        preg_match("/\\\$dolibarr_main_db_user\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchUser);
+        preg_match("/\\\$dolibarr_main_instance_unique_id\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchId);
 
         // Récupère les valeurs trouvées (ou une valeur par défaut si non trouvée)
         $dbPass = $matchPass[1] ?? null;

@@ -93,7 +93,7 @@ class InstanceManager extends Component
                 die("Une ou plusieurs valeurs manquent !");
             }
         } catch(\Exception $e){
-            die($e->getMessage());
+            dd($e->getMessage());
         }
         
     }

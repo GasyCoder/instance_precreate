@@ -8,8 +8,8 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class InstanceManager extends Component
 {
-    use WithPagination, LivewireAlert, AuthorizesRequests;
-    
+    use LivewireAlert;
+
     public $url, $password, $api_key, $db_name, $statut = 'libre';
     public $libres, $attribues;
     

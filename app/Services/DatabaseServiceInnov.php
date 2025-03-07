@@ -97,7 +97,7 @@ class DatabaseServiceInnov
     }
     
 
-    public function updateCredentialsInnov($db_name, $instanceName, $api_key_dolibarr, $password, $userEmail, $subscriptionId)
+    public function updateCredentialsInnov($db_name, $instanceName, $api_key_dolibarr, $password, $userEmail, $subscriptionId, $instance_free)
     {
         try {
             config(['database.connections.dynamic' => [
@@ -117,8 +117,6 @@ class DatabaseServiceInnov
             DB::reconnect('dynamic');
             
             $subscription = Subscription::find($subscriptionId);
-
-            $instances_free = InstanceQuota::where('statut', 'libre')->first();
             
             DB::connection('dynamic')->table('users')
                 ->where('id', 1)

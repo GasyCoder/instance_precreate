@@ -54,7 +54,6 @@
                 <thead>
                     <tr>
                         <th>URL</th>
-                        <th>Api key</th>
                         <th>Statut</th>
                     </tr>
                 </thead>

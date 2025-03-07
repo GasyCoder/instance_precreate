@@ -11,6 +11,9 @@ use App\Notifications\SendInstanceCreatedEmail;
 class FastInstanceProvisioningService {
     public function createInstance($instanceData, $user, $instance) {
         try {
+            //Rechèrche la prémière instance libre
+            $instance_free = InstanceQuota::where('statut', 'libre')->first();
+            
             // Provisionnement synchrone
             $provisioningService = new InstanceProvisioningService();
             $instanceDetails = $provisioningService->provisionInstance(
@@ -20,7 +23,8 @@ class FastInstanceProvisioningService {
                 $instanceData['url_suffix'],
                 $instanceData['api_key_dolibarr'],
                 $user->email,
-                $instance['subscription_id']
+                $instance['subscription_id'],
+                $instance_free
             );
 
             if ($instanceDetails) {
@@ -36,9 +40,6 @@ class FastInstanceProvisioningService {
                     'status' => 'active',
                     'url' => $instanceDetails['url']
                 ]);
-
-                //Rechèrche la prémière instance libre
-                $instance_free = InstanceQuota::where('statut', 'libre')->first();
 
                 // Création utilisateur Innov
                 $newUsersInnov = new CreateUsersInnov();

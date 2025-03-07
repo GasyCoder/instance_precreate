@@ -43,7 +43,7 @@ class InstanceManager extends Component
                 'db_name' => $this->db_name
             ]);
     
-            $this->reset(['url', 'password', 'api_key', 'statut']);
+            $this->reset(['url', 'password', 'api_key', 'statut', 'db_name']);
             $this->updateCounts();
             $this->dispatch('instanceAdded'); // Rafraîchit la liste
         } catch(\Exception $e){

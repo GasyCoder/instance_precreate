@@ -24,8 +24,11 @@ class InstanceProvisioningService
     }
 
 
-    public function provisionInstance($instanceName, $password, $login, $urlSuffix, $api_key_dolibarr, $userEmail, $subscriptionId)
+    public function provisionInstance($instanceName, $password, $login, $urlSuffix, $api_key_dolibarr, $userEmail, $subscriptionId, $instance_free)
     {
+        //Activation Api dans dolibarr
+        $this->databaseServiceDolibarr->activeApi($instance_free);
+
         //Création base de donnée de Innov
         $dbNameInnov = $this->databaseServiceInnov->createDatabaseInnov($instanceName);
         if(!$dbNameInnov) {
@@ -40,7 +43,7 @@ class InstanceProvisioningService
         $api_key = $this->apiService->dolEncryptApi($api_key_dolibarr, $instance_id);
         
         //Mise à jours base de donnée Innov
-        $this->databaseServiceInnov->updateCredentialsInnov($dbNameInnov, $instanceName, $api_key_dolibarr, $password, $userEmail, $subscriptionId);
+        $this->databaseServiceInnov->updateCredentialsInnov($dbNameInnov, $instanceName, $api_key_dolibarr, $password, $userEmail, $subscriptionId, $instance_free);
         
         ///Création sous-domaine pour Innov
         $this->cpanelService->createSubdomainInnov($instanceName);

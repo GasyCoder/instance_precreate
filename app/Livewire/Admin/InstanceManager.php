@@ -11,7 +11,7 @@ class InstanceManager extends Component
 {
     use LivewireAlert;
 
-    public $url, $password, $api_key, $dbName, $dbUser, $dbPass, $instanceId, $statut = 'libre';
+    public $url, $password, $api_key, $dbName, $dbUser, $dbPass, $instanceId, $prefix, $statut = 'libre';
     public $libres, $attribues;
     
     protected $rules = [
@@ -47,6 +47,7 @@ class InstanceManager extends Component
                 'db_name' => $this->dbName,
                 'db_user' => $this->dbUser,
                 'db_pass' => $this->dbPass,
+                'prefix' => $this->prefix,
                 'instanceId' => $this->instanceId
             ]);
     
@@ -76,16 +77,18 @@ class InstanceManager extends Component
         preg_match("/\\\$dolibarr_main_db_name\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchName);
         preg_match("/\\\$dolibarr_main_db_pass\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPass);
         preg_match("/\\\$dolibarr_main_db_user\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchUser);
+        preg_match("/\\\$dolibarr_main_db_prefix\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPrefix);
         preg_match("/\\\$dolibarr_main_instance_unique_id\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchId);
 
         // Récupère les valeurs trouvées (ou une valeur par défaut si non trouvée)
         $this->dbName = $matchName[1] ?? null;
         $this->dbPass = $matchPass[1] ?? null;
         $this->dbUser = $matchUser[1] ?? null;
+        $this->prefix = $matchPrefix[1] ?? null;
         $this->instanceId = $matchId[1] ?? null;
 
         // Vérifie si toutes les valeurs ont été trouvées
-        if (!$this->dbPass || !$this->dbUser || !$this->instanceId) {
+        if (!$this->dbPass || !$this->dbUser || !$this->instanceId || $this->prefix) {
             die("Une ou plusieurs valeurs manquent !");
         }
     }

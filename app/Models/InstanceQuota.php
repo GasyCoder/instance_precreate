@@ -17,6 +17,7 @@ class InstanceQuota extends Model
         'db_name',
         'db_user',
         'db_pass',
+        'prefix',
         'instanceId'
     ];
 }

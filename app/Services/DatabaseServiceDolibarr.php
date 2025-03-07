@@ -92,7 +92,7 @@ class DatabaseServiceDolibarr
             DB::purge('dynamic');
             DB::reconnect('dynamic');
             
-            DB::connection('dynamic')->table('llx2n_user')
+            DB::connection('dynamic')->table($instance_free->prefix.'_user')
                 ->where('rowid', 1)
                 ->update([
                     'api_key' => $api_key

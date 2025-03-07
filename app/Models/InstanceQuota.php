@@ -13,6 +13,7 @@ class InstanceQuota extends Model
         'url',
         'password',
         'api_key',
-        'statut'
+        'statut',
+        'db_name'
     ];
 }

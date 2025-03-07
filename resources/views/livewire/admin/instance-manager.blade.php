@@ -37,11 +37,6 @@
                     @error('password') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="api_key" class="form-label">Api Key</label>
-                    <input type="text" wire:model="api_key" id="url" class="form-control">
-                    @error('api_key') <span class="text-danger">{{ $message }}</span> @enderror
-                </div>
-                <div class="mb-3">
                     <label for="db_name" class="form-label">Nom de la base de donnée</label>
                     <input type="text" wire:model="db_name" id="db_name" class="form-control">
                     @error('api_key') <span class="text-danger">{{ $message }}</span> @enderror

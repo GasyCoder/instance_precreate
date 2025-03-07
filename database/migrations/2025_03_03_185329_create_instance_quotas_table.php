@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('password')->unique();
             $table->string('api_key')->nullable()->unique();
             $table->string('statut');
+            $table->string('db_name')->unique();
             $table->timestamps();
         });
     }

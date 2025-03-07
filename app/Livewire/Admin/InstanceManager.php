@@ -8,7 +8,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class InstanceManager extends Component
 {
-    public $url, $password, $api_key, $statut = 'libre';
+    public $url, $password, $api_key, $db_name, $statut = 'libre';
     public $libres, $attribues;
     
     protected $rules = [
@@ -16,6 +16,7 @@ class InstanceManager extends Component
         'password' => 'required|password|unique',
         'api_key' => 'requierd|api_key|unique',
         'statut' => 'required|in:libre,attribué',
+        'db_name' => 'required|in:db_name|unique'
     ];
 
     public function mount()

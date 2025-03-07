@@ -61,36 +61,41 @@ class InstanceManager extends Component
 
     public function getConfigDolibarr()
     {
-        // Spécifie le chemin du fichier de configuration Dolibarr
-        $folderName = parse_url($this->url, PHP_URL_HOST);
-        $filePath = '/home/sc2sylg/'. $folderName . '/conf/conf.php';
+        try{
+            // Spécifie le chemin du fichier de configuration Dolibarr
+            $folderName = parse_url($this->url, PHP_URL_HOST);
+            $filePath = '/home/sc2sylg/'. $folderName . '/conf/conf.php';
 
-        // Vérifie si le fichier existe
-        if (!file_exists($filePath)) {
-            die("Fichier non trouvé !");
+            // Vérifie si le fichier existe
+            if (!file_exists($filePath)) {
+                die("Fichier non trouvé !");
+            }
+
+            // Lit le contenu du fichier
+            $configContent = file_get_contents($filePath);
+
+            // Recherche les valeurs des variables avec des expressions régulières
+            preg_match("/\\\$dolibarr_main_db_name\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchName);
+            preg_match("/\\\$dolibarr_main_db_pass\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPass);
+            preg_match("/\\\$dolibarr_main_db_user\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchUser);
+            preg_match("/\\\$dolibarr_main_db_prefix\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPrefix);
+            preg_match("/\\\$dolibarr_main_instance_unique_id\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchId);
+
+            // Récupère les valeurs trouvées (ou une valeur par défaut si non trouvée)
+            $this->dbName = $matchName[1] ?? null;
+            $this->dbPass = $matchPass[1] ?? null;
+            $this->dbUser = $matchUser[1] ?? null;
+            $this->prefix = $matchPrefix[1] ?? null;
+            $this->instanceId = $matchId[1] ?? null;
+
+            // Vérifie si toutes les valeurs ont été trouvées
+            if (!$this->dbPass || !$this->dbUser || !$this->instanceId || $this->prefix) {
+                die("Une ou plusieurs valeurs manquent !");
+            }
+        } catch(\Exception $e){
+            die($e->getMessage());
         }
-
-        // Lit le contenu du fichier
-        $configContent = file_get_contents($filePath);
-
-        // Recherche les valeurs des variables avec des expressions régulières
-        preg_match("/\\\$dolibarr_main_db_name\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchName);
-        preg_match("/\\\$dolibarr_main_db_pass\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPass);
-        preg_match("/\\\$dolibarr_main_db_user\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchUser);
-        preg_match("/\\\$dolibarr_main_db_prefix\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPrefix);
-        preg_match("/\\\$dolibarr_main_instance_unique_id\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchId);
-
-        // Récupère les valeurs trouvées (ou une valeur par défaut si non trouvée)
-        $this->dbName = $matchName[1] ?? null;
-        $this->dbPass = $matchPass[1] ?? null;
-        $this->dbUser = $matchUser[1] ?? null;
-        $this->prefix = $matchPrefix[1] ?? null;
-        $this->instanceId = $matchId[1] ?? null;
-
-        // Vérifie si toutes les valeurs ont été trouvées
-        if (!$this->dbPass || !$this->dbUser || !$this->instanceId || $this->prefix) {
-            die("Une ou plusieurs valeurs manquent !");
-        }
+        
     }
 
     public function render()

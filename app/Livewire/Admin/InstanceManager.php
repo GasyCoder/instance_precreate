@@ -4,6 +4,7 @@ namespace App\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\InstanceQuota;
+use Illuminate\Support\Facades\DB;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class InstanceManager extends Component
@@ -34,7 +35,7 @@ class InstanceManager extends Component
 
     public function addInstance()
     {
-        try{
+        /*try{
             InstanceQuota::create([
                 'url' => $this->url,
                 'password' => $this->password,
@@ -48,8 +49,52 @@ class InstanceManager extends Component
             $this->dispatch('instanceAdded'); // Rafraîchit la liste
         } catch(\Exception $e){
             dd($e->getMessage());
-        }
+        }*/
+
+        $this->getConfigDolibarr();
         
+    }
+
+    public function getConfigDolibarr()
+    {
+        // Spécifie le chemin du fichier de configuration Dolibarr
+        $folderName = parse_url($url, PHP_URL_HOST);
+        $filePath = '/home/sc2sylg/'. $folderName . '/conf/conf.php';
+
+        // Vérifie si le fichier existe
+        if (!file_exists($filePath)) {
+            die("Fichier non trouvé !");
+        }
+
+        // Lit le contenu du fichier
+        $configContent = file_get_contents($filePath);
+
+        // Recherche les valeurs des variables avec des expressions régulières
+        preg_match("/\\$dolibarr_main_db_pass\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPass);
+        preg_match("/\\$dolibarr_main_db_user\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchUser);
+        preg_match("/\\$dolibarr_main_instance_unique_id\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchId);
+
+        // Récupère les valeurs trouvées (ou une valeur par défaut si non trouvée)
+        $dbPass = $matchPass[1] ?? null;
+        $dbUser = $matchUser[1] ?? null;
+        $instanceId = $matchId[1] ?? null;
+
+        // Vérifie si toutes les valeurs ont été trouvées
+        if (!$dbPass || !$dbUser || !$instanceId) {
+            die("Une ou plusieurs valeurs manquent !");
+        }
+
+        dd($db_user . db_pass . $instanceId);
+        // Insère dans la base de données Laravel
+        /*DB::table('ton_table')->insert([
+            'db_user' => $dbUser,
+            'db_pass' => $dbPass,
+            'instance_id' => $instanceId,
+            'created_at' => now(),
+        ]);*/
+
+        echo "Données insérées avec succès !";
+
     }
 
     public function render()

@@ -79,9 +79,9 @@ class DatabaseServiceDolibarr
             config(['database.connections.dynamic' => [
                 'driver' => 'mariadb',
                 'host' => 'localhost',
-                'database' => $db_name,
-                'username' => $this->config['mysql_user'],
-                'password' => $this->config['mysql_password'],
+                'database' => $instance_free->db_name,
+                'username' => 'sc2sylg_001',
+                'password' => 'o)7)p2SHr4',
                 'charset' => 'utf8mb4',
                 'collation' => 'utf8mb4_unicode_ci',
                 'prefix' => '',

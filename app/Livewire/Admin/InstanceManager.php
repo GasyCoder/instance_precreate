@@ -46,7 +46,7 @@ class InstanceManager extends Component
             $this->updateCounts();
             $this->dispatch('instanceAdded'); // Rafraîchit la liste
         } catch(\Exception $e){
-            $this->alert('error', 'Erreur lors de l\'ajout de l\'instance: ' . $e->getMessage());
+            dd($e->getMessage());
         }
         
     }

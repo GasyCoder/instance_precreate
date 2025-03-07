@@ -68,7 +68,7 @@ class InstanceManager extends Component
 
             // Vérifie si le fichier existe
             if (!file_exists($filePath)) {
-                die("Fichier non trouvé !");
+                dd("Fichier non trouvé !");
             }
 
             // Lit le contenu du fichier
@@ -90,7 +90,7 @@ class InstanceManager extends Component
 
             // Vérifie si toutes les valeurs ont été trouvées
             if (!$this->dbPass || !$this->dbUser || !$this->instanceId || $this->prefix) {
-                die("Une ou plusieurs valeurs manquent !");
+                dd("Une ou plusieurs valeurs manquent !");
             }
         } catch(\Exception $e){
             dd($e->getMessage());

@@ -89,7 +89,7 @@ class InstanceManager extends Component
             $this->instanceId = $matchId[1] ?? null;
 
             // Vérifie si toutes les valeurs ont été trouvées
-            if (!$this->dbPass || !$this->dbUser || !$this->instanceId || $this->prefix) {
+            if (!$this->dbPass || !$this->dbUser || !$this->instanceId || !$this->prefix) {
                 dd("Une ou plusieurs valeurs manquent !");
             }
         } catch(\Exception $e){

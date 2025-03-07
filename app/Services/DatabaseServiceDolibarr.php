@@ -24,8 +24,8 @@ class DatabaseServiceDolibarr
                 'driver' => 'mariadb',
                 'host' => 'localhost',
                 'database' => $instance_free->db_name,
-                'username' => 'sc2sylg_001',
-                'password' => 'o)7)p2SHr4',
+                'username' => $instance_free->db_user,
+                'password' => $instance_free->db_pass,
                 'charset' => 'utf8mb4',
                 'collation' => 'utf8mb4_unicode_ci',
                 'prefix' => '',
@@ -73,15 +73,15 @@ class DatabaseServiceDolibarr
         }
     }
     
-    public function updateCredentials($db_name, $api_key)
+    public function updateCredentials($instance_free, $api_key)
     {
         try {
             config(['database.connections.dynamic' => [
                 'driver' => 'mariadb',
                 'host' => 'localhost',
                 'database' => $instance_free->db_name,
-                'username' => 'sc2sylg_001',
-                'password' => 'o)7)p2SHr4',
+                'username' => $instance_free->db_user,
+                'password' => $instance_free->db_pass,
                 'charset' => 'utf8mb4',
                 'collation' => 'utf8mb4_unicode_ci',
                 'prefix' => '',
@@ -91,10 +91,6 @@ class DatabaseServiceDolibarr
     
             DB::purge('dynamic');
             DB::reconnect('dynamic');
-    
-            // Crypter le mot de passe selon la méthode utilisée par Dolibarr
-            $passwordCrypted = $this->cryptDolibarrPassword($password);
-            
             
             DB::connection('dynamic')->table('llx2n_user')
                 ->where('rowid', 1)

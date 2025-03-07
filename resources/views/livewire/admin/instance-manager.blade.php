@@ -56,7 +56,6 @@
                     @foreach($instances as $instance)
                     <tr>
                         <td><a href="{{ $instance->url }}" target="_blank">{{ $instance->url }}</a></td>
-                        <td>{{ $instance->api_key }}</td>
                         <td>
                             <span class="badge {{ $instance->statut == 'libre' ? 'bg-success' : 'bg-danger' }}">
                                 {{ ucfirst($instance->statut) }}

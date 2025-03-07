@@ -11,7 +11,7 @@ class InstanceManager extends Component
 {
     use LivewireAlert;
 
-    public $url, $password, $api_key, $db_name, $statut = 'libre';
+    public $url, $password, $api_key, $dbName, $dbUser, $dbPass, $instanceId, $statut = 'libre';
     public $libres, $attribues;
     
     protected $rules = [
@@ -35,13 +35,20 @@ class InstanceManager extends Component
 
     public function addInstance()
     {
-        /*try{
+        try{
+            //Récupère les configurations de l'instance
+            $this->getConfigDolibarr();
+
+            //Insertion dans la base de donnée
             InstanceQuota::create([
                 'url' => $this->url,
                 'password' => $this->password,
                 'api_key' => $this->api_key,
                 'statut' => $this->statut,
-                'db_name' => $this->db_name
+                'db_name' => $this->dbName,
+                'db_user' => $this->dbUser,
+                'db_pass' => $this->dbPass,
+                'instanceId' => $this->instanceId
             ]);
     
             $this->reset(['url', 'password', 'api_key', 'statut', 'db_name']);
@@ -49,10 +56,7 @@ class InstanceManager extends Component
             $this->dispatch('instanceAdded'); // Rafraîchit la liste
         } catch(\Exception $e){
             dd($e->getMessage());
-        }*/
-
-        $this->getConfigDolibarr();
-        
+        }   
     }
 
     public function getConfigDolibarr()
@@ -70,31 +74,21 @@ class InstanceManager extends Component
         $configContent = file_get_contents($filePath);
 
         // Recherche les valeurs des variables avec des expressions régulières
+        preg_match("/\\\$dolibarr_main_db_name\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchName);
         preg_match("/\\\$dolibarr_main_db_pass\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchPass);
         preg_match("/\\\$dolibarr_main_db_user\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchUser);
         preg_match("/\\\$dolibarr_main_instance_unique_id\\s*=\\s*['\"](.*?)['\"];/", $configContent, $matchId);
 
         // Récupère les valeurs trouvées (ou une valeur par défaut si non trouvée)
-        $dbPass = $matchPass[1] ?? null;
-        $dbUser = $matchUser[1] ?? null;
-        $instanceId = $matchId[1] ?? null;
+        $this->dbName = $matchName[1] ?? null;
+        $this->dbPass = $matchPass[1] ?? null;
+        $this->dbUser = $matchUser[1] ?? null;
+        $this->instanceId = $matchId[1] ?? null;
 
         // Vérifie si toutes les valeurs ont été trouvées
         if (!$dbPass || !$dbUser || !$instanceId) {
             die("Une ou plusieurs valeurs manquent !");
         }
-
-        dd($dbUser . $dbPass . $instanceId);
-        // Insère dans la base de données Laravel
-        /*DB::table('ton_table')->insert([
-            'db_user' => $dbUser,
-            'db_pass' => $dbPass,
-            'instance_id' => $instanceId,
-            'created_at' => now(),
-        ]);*/
-
-        echo "Données insérées avec succès !";
-
     }
 
     public function render()

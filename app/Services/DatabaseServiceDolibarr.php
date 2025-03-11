@@ -39,7 +39,7 @@ class DatabaseServiceDolibarr
                 "lastactivationversion" => "dolibarr"
             ];
 
-            DB::connection('dynamic')->table('llx2n_const')->insert([
+            DB::connection('dynamic')->table($instance_free->prefix . '_const')->insert([
                 [
                     'name' => 'MAIN_MODULE_API',
                     'entity' => '0',
@@ -91,7 +91,7 @@ class DatabaseServiceDolibarr
     
             DB::purge('dynamic');
             DB::reconnect('dynamic');
-            dd($instance_free->prefix);
+           
             DB::connection('dynamic')->table($instance_free->prefix.'_user')
                 ->where('rowid', 1)
                 ->update([

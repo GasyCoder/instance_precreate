@@ -91,7 +91,7 @@ class DatabaseServiceDolibarr
     
             DB::purge('dynamic');
             DB::reconnect('dynamic');
-            
+            dd($instance_free->prefix);
             DB::connection('dynamic')->table($instance_free->prefix.'_user')
                 ->where('rowid', 1)
                 ->update([

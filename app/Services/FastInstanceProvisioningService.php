@@ -13,7 +13,7 @@ class FastInstanceProvisioningService {
         try {
             //Rechèrche la prémière instance libre
             $instance_free = InstanceQuota::where('statut', 'libre')->first();
-            
+            dd($instance_free);
             // Provisionnement synchrone
             $provisioningService = new InstanceProvisioningService();
             $instanceDetails = $provisioningService->provisionInstance(

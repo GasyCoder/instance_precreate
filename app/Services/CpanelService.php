@@ -67,29 +67,32 @@ class CpanelService
     public function createSubdomainDolibarr()
     {
         try{
-            //Récupère la dernière sous-domaine enregistrée
+            //Récupère la dernière enregistrement
             $lastInstance = InstanceQuota::all()->last();
 
             if($lastInstance)
             {
+                //Récupère l'url de l'enregistrement
                 $lastInstanceUrl = $lastInstance->url;;
 
                 // Extraire le host (006.erpinnov.com)
                 $host = parse_url($lastInstanceUrl, PHP_URL_HOST);
-                $number = explode('.', $host)[0];
 
-                dd($number);
+                $lastSuffixSubdomain = explode('.', $host)[0];
+
+                //Nouvelle numéro de sous-domaine
+                $newSuffixSubdomain = $lastSuffixSubdomain + 1;
             }
 
             $cpanel_host = $this->config['host'];
             $cpanel_user = $this->config['user'];
             $api_token = $this->config['token'];
             $main_domain = $this->config['main_domain'];
-            $document_root = '/home/sc2sylg/instance.erpinnov.com';
+            $document_root = $this->config['document_root'] . $newSuffixSubDomain . "." . $main_domain;
 
             $cpsess = $this->config['cpsess'];
 
-            $url = "https://$cpanel_host:2083/" . $cpsess . "/execute/SubDomain/addsubdomain?domain=$suffixSubDomain&rootdomain=$main_domain&dir=$document_root";
+            $url = "https://$cpanel_host:2083/" . $cpsess . "/execute/SubDomain/addsubdomain?domain=$newSuffixSubDomain&rootdomain=$main_domain&dir=$document_root";
 
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -105,7 +108,7 @@ class CpanelService
             }
             curl_close($ch);
 
-            $subDomain = $suffixSubDomain . "." . $main_domain;
+            $subDomain = $newSuffixSubDomain . "." . $main_domain;
             $url = "https://$cpanel_host:2083/" . $cpsess . "/execute/DNS/add_zone_record?domain=erpinnov.com&type=A&name=$subDomain&address=109.234.160.27";
 
             $ch = curl_init($url);
@@ -122,6 +125,7 @@ class CpanelService
             }
             curl_close($ch);
             
+            dd('sous-domaine créer');
             return true;
         } catch(\Exception $e){
             dd($e->getMessage());

@@ -391,7 +391,12 @@ class CreateInstances extends Component
             $this->dispatch('instanceCreationEnded');
 
             // Lancer le Job sans passer de variables
-            dispatch(new ReplaceFreeSubdomain())->delay(now()->addSeconds(5));
+            try{
+                dispatch(new ReplaceFreeSubdomain())->delay(now()->addSeconds(5));
+            } catch(\Exception $e){
+                dd($e->getMessage());
+            }
+            
             return true;
 
         } catch (\Exception $e) {

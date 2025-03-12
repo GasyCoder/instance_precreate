@@ -24,7 +24,6 @@ class ReplaceFreeSubdomain implements ShouldQueue
     public function handle()
     {
         try {
-            dd('eto');
             // Récupère le dernier enregistrement
             $lastInstance = InstanceQuota::all()->last();
             
@@ -82,27 +81,10 @@ class ReplaceFreeSubdomain implements ShouldQueue
                 return false;
             }
             curl_close($ch);
-            try{
-                InstanceQuota::create([
-                    'url' => $newSuffixSubDomain . "." . $main_domain,
-                    'password' => "",
-                    'api_key' => "",
-                    'statut' => "",
-                    'db_name' => "",
-                    'db_user' => "",
-                    'db_pass' => "",
-                    'prefix' => "",
-                    'instanceId' => ""
-                ]);
-            } catch(\Exception $e){
-                dd($e->getMessage());
-            }
             
-
             Log::info("Sous-domaine créé avec succès : $subDomain");
 
         } catch (\Exception $e) {
-            dd($e->getMessage());
             Log::error("Erreur lors de la création du sous-domaine : " . $e->getMessage());
         }
     }

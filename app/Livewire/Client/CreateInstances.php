@@ -288,111 +288,110 @@ class CreateInstances extends Component
         $this->dispatch('instanceCreationStarted');
 
         try {
-            // DB::beginTransaction();
+            DB::beginTransaction();
 
-            // $this->validate();
+            $this->validate();
 
-            // $user = Auth::user();
-            // $instanceName = $this->creationType === 'auto' ? $this->autoName : $this->name;
+            $user = Auth::user();
+            $instanceName = $this->creationType === 'auto' ? $this->autoName : $this->name;
 
-            // logger()->info('Démarrage création instance:', [
-            //     'type' => $this->creationType,
-            //     'name' => $instanceName,
-            //     'user_id' => $user->id
-            // ]);
+            logger()->info('Démarrage création instance:', [
+                'type' => $this->creationType,
+                'name' => $instanceName,
+                'user_id' => $user->id
+            ]);
 
             // // Récupérer le plan sélectionné
-            // $selectedPlan = session()->get('selected_plan');
-            // if (!$selectedPlan) {
-            //     throw new \Exception('Aucun plan sélectionné.');
-            // }
+            $selectedPlan = session()->get('selected_plan');
+            if (!$selectedPlan) {
+                throw new \Exception('Aucun plan sélectionné.');
+            }
 
             // Récupérer ou créer la souscription active
-            // $activeSubscription = Subscription::where('user_id', $user->id)
-            //     ->where('plan_id', $selectedPlan['plan_id'])
-            //     ->whereIn('status', [Subscription::STATUS_ACTIVE, Subscription::STATUS_TRIAL])
-            //     ->latest()
-            //     ->first();
+            $activeSubscription = Subscription::where('user_id', $user->id)
+                ->where('plan_id', $selectedPlan['plan_id'])
+                ->whereIn('status', [Subscription::STATUS_ACTIVE, Subscription::STATUS_TRIAL])
+                ->latest()
+                ->first();
 
-            // if (!$activeSubscription && session()->has('payment_completed')) {
-            //     $activeSubscription = Subscription::create([
-            //         'user_id' => $user->id,
-            //         'plan_id' => $selectedPlan['plan_id'],
-            //         'sub_plan_id' => $selectedPlan['sub_plan_id'] ?? null,
-            //         'start_date' => now(),
-            //         'end_date' => now()->addMonth(),
-            //         'status' => Subscription::STATUS_ACTIVE,
-            //     ]);
-            // } elseif (!$activeSubscription) {
-            //     throw new \Exception('Aucune souscription active trouvée.');
-            // }
+            if (!$activeSubscription && session()->has('payment_completed')) {
+                $activeSubscription = Subscription::create([
+                    'user_id' => $user->id,
+                    'plan_id' => $selectedPlan['plan_id'],
+                    'sub_plan_id' => $selectedPlan['sub_plan_id'] ?? null,
+                    'start_date' => now(),
+                    'end_date' => now()->addMonth(),
+                    'status' => Subscription::STATUS_ACTIVE,
+                ]);
+            } elseif (!$activeSubscription) {
+                throw new \Exception('Aucune souscription active trouvée.');
+            }
 
             // // Générer les identifiants d'accès
-            // $instance_free = InstanceQuota::where('statut', 'libre')->first();            
-            // $dolibarrPassword = $instance_free->password;
-            // $instanceData = [
-            //     'name' => $instanceName,
-            //     'password_dolibarr' => $dolibarrPassword,
-            //     'login_dolibarr' => 'admin',
-            //     'url_suffix' => Str::slug($instanceName),
-            //     'api_key_dolibarr' => Str::random(32),
-            // ];
+            $instance_free = InstanceQuota::where('statut', 'libre')->first();            
+            $dolibarrPassword = $instance_free->password;
+            $instanceData = [
+                'name' => $instanceName,
+                'password_dolibarr' => $dolibarrPassword,
+                'login_dolibarr' => 'admin',
+                'url_suffix' => Str::slug($instanceName),
+                'api_key_dolibarr' => Str::random(32),
+            ];
 
             // Créer l'instance
-            // $entreprise = Entreprise::findOrFail($this->entreprise_id);
-            // $instance = Instance::create([
-            //     'user_id' => $user->id,
-            //     'subscription_id' => $activeSubscription->id,
-            //     'reference' => Instance::generateNextReference(),
-            //     'name' => $instanceName,
-            //     'entreprise_id' => $entreprise->id,
-            //     'status' => 'active',
-            //     'url' => $instanceName . '.erpinnov.com',
-            //     'auth_token' => Instance::generateUniqueAuthToken(),
-            //     'dolibarr_username' => $instanceData['login_dolibarr'],
-            //     'dolibarr_password' => Hash::make($dolibarrPassword),
-            //     'dolibarr_api_key' => $instanceData['api_key_dolibarr'],
-            //     'pays' => $entreprise->pays === 'Madagascar' ? 0 : 1,
-            // ]);
+            $entreprise = Entreprise::findOrFail($this->entreprise_id);
+            $instance = Instance::create([
+                'user_id' => $user->id,
+                'subscription_id' => $activeSubscription->id,
+                'reference' => Instance::generateNextReference(),
+                'name' => $instanceName,
+                'entreprise_id' => $entreprise->id,
+                'status' => 'active',
+                'url' => $instanceName . '.erpinnov.com',
+                'auth_token' => Instance::generateUniqueAuthToken(),
+                'dolibarr_username' => $instanceData['login_dolibarr'],
+                'dolibarr_password' => Hash::make($dolibarrPassword),
+                'dolibarr_api_key' => $instanceData['api_key_dolibarr'],
+                'pays' => $entreprise->pays === 'Madagascar' ? 0 : 1,
+            ]);
 
             // // Provisionnement rapide de l'instance
-            // $fastProvisioning = new FastInstanceProvisioningService();
-            // $success = $fastProvisioning->createInstance($instanceData, $user, $instance);
+            $fastProvisioning = new FastInstanceProvisioningService();
+            $success = $fastProvisioning->createInstance($instanceData, $user, $instance);
 
-            // if (!$success) {
-            //     throw new \Exception('Échec du provisionnement de l\'instance.');
-            // }
+            if (!$success) {
+                throw new \Exception('Échec du provisionnement de l\'instance.');
+            }
 
             // Stocker les informations pour l'affichage
-            // $this->newInstanceInfo = [
-            //     'name' => $instance->name,
-            //     'login' => $user->email,
-            //     'password' => $dolibarrPassword,
-            //     'url' => "http://" . $instance->name . ".erpinnov.com",
-            //     'created_at' => now(),
-            //     'created_by' => $user->email
-            // ];
+            $this->newInstanceInfo = [
+                'name' => $instance->name,
+                'login' => $user->email,
+                'password' => $dolibarrPassword,
+                'url' => "http://" . $instance->name . ".erpinnov.com",
+                'created_at' => now(),
+                'created_by' => $user->email
+            ];
 
             // // Déclencher l'événement de création
-            // event(new InstanceCreatedEvent($instance));
+            event(new InstanceCreatedEvent($instance));
 
             // // Nettoyer la session
-            // session()->forget(['selected_plan', 'payment_completed', 'trial_activated']);
+            session()->forget(['selected_plan', 'payment_completed', 'trial_activated']);
 
             // // Commit de la transaction
-            // DB::commit();
+            DB::commit();
 
             // Log du succès
-            // logger()->info('Instance créée avec succès:', [
-            //     'instance_id' => $instance->id,
-            //     'name' => $instance->name
-            // ]);
+            logger()->info('Instance créée avec succès:', [
+                'instance_id' => $instance->id,
+                'name' => $instance->name
+            ]);
 
-            // $this->alert('success', 'Instance créée avec succès. Vos informations de connexion sont disponibles ci-dessous.');
-            // $this->dispatch('instanceCreationEnded');
+            $this->alert('success', 'Instance créée avec succès. Vos informations de connexion sont disponibles ci-dessous.');
+            $this->dispatch('instanceCreationEnded');
 
-            // Lancer le Job sans passer de variables
-            Log::info("eto");
+            // Lancer le Job de création de sous-domaine
             try{
                 dispatch(new ReplaceFreeSubdomain());
             } catch(\Exception $e){

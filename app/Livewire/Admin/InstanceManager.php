@@ -78,7 +78,7 @@ class InstanceManager extends Component
             // Spécifie le chemin du fichier de configuration Dolibarr
             $folderName = parse_url($this->url, PHP_URL_HOST);
             $filePath = '/home/sc2sylg/Instance/'. $folderName . '/conf/conf.php';
-
+            dd($filePath);
             // Vérifie si le fichier existe
             if (!file_exists($filePath)) {
                 dd("Fichier non trouvé !");

@@ -78,10 +78,10 @@ class CpanelService
                 // Extraire le host (006.erpinnov.com)
                 $host = parse_url($lastInstanceUrl, PHP_URL_HOST);
 
-                $lastSuffixSubdomain = explode('.', $host)[0];
+                $lastSuffixSubDomain = explode('.', $host)[0];
 
                 //Nouvelle numéro de sous-domaine
-                $newSuffixSubdomain = $lastSuffixSubdomain + 1;
+                $newSuffixSubDomain = $lastSuffixSubDomain + 1;
             }
 
             $cpanel_host = $this->config['host'];

@@ -13,7 +13,6 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
-
         // Creating Client User
         $client = User::create([
             'email' => 'client@mail.com',

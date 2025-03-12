@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('instance_quotas', function (Blueprint $table) {
             $table->id();
-            $table->string('url')->unique();
-            $table->string('password')->unique();
+            $table->string('url')->nullable()->unique();
+            $table->string('password')->nullable()->unique();
             $table->string('api_key')->nullable()->unique();
             $table->string('statut');
-            $table->string('db_name')->unique();
-            $table->string('db_user')->unique();
-            $table->string('db_pass')->unique();
-            $table->string('prefix')->unique();
-            $table->string('instanceId')->unique();
+            $table->string('db_name')->nullable()->unique();
+            $table->string('db_user')->nullable()->unique();
+            $table->string('db_pass')->nullable()->unique();
+            $table->string('prefix')->nullable()->unique();
+            $table->string('instanceId')->nullable()->unique();
             $table->timestamps();
         });
     }

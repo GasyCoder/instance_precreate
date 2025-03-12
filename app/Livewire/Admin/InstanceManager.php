@@ -11,7 +11,7 @@ class InstanceManager extends Component
 {
     use LivewireAlert;
 
-    public $url, $password, $api_key, $dbName, $dbUser, $dbPass, $instanceId, $prefix, $statut = 'libre';
+    public $id, $url, $password, $api_key, $dbName, $dbUser, $dbPass, $instanceId, $prefix, $statut = 'libre';
     public $libres, $attribues;
     
     protected $rules = [
@@ -38,18 +38,31 @@ class InstanceManager extends Component
             //Récupère les configurations de l'instance
             $this->getConfigDolibarr();
 
+            //Mise à jours de la base de donnée
+            $instance = InstanceQuota::find($id);
+
+            $instance->password = $this->password;
+            $instance->api_key = $this->api_key;
+            $instance->statut = $this->statut;
+            $instance->db_name = $this->dbName;
+            $instance->db_user = $this->dbUser;
+            $instance->db_pass = $this->dbPass;
+            $instance->prefix = $this->prefix;
+            $instance->instanceId = $this->instanceId;
+
+            $instance->save();
             //Insertion dans la base de donnée
-            InstanceQuota::create([
-                'url' => $this->url,
-                'password' => $this->password,
-                'api_key' => $this->api_key,
-                'statut' => $this->statut,
-                'db_name' => $this->dbName,
-                'db_user' => $this->dbUser,
-                'db_pass' => $this->dbPass,
-                'prefix' => $this->prefix,
-                'instanceId' => $this->instanceId
-            ]);
+            // InstanceQuota::create([
+            //     'url' => $this->url,
+            //     'password' => $this->password,
+            //     'api_key' => $this->api_key,
+            //     'statut' => $this->statut,
+            //     'db_name' => $this->dbName,
+            //     'db_user' => $this->dbUser,
+            //     'db_pass' => $this->dbPass,
+            //     'prefix' => $this->prefix,
+            //     'instanceId' => $this->instanceId
+            // ]);
     
             $this->reset(['url', 'password', 'api_key', 'statut']);
             $this->updateCounts();

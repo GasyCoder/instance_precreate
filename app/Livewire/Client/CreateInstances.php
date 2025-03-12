@@ -24,8 +24,6 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use App\Services\FastInstanceProvisioningService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Log;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class CreateInstances extends Component
 {
@@ -395,11 +393,7 @@ class CreateInstances extends Component
 
             // Lancer le Job de création de sous-domaine
             try{
-                dispatch(new ReplaceFreeSubdomain());
-
-                 // Lancer le worker pour exécuter immédiatement le job
-                $process = new Process(['php', 'artisan', 'queue:work', '--once']);
-                $process->start();
+                (new ReplaceFreeSubdomain())->handle();
             } catch(\Exception $e){
                 dd($e->getMessage());
             }

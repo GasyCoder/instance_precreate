@@ -24,7 +24,6 @@ class ReplaceFreeSubdomain implements ShouldQueue
     public function handle()
     {
         try {
-            Log::info("Sous-domaine créé avec succès : $subDomain");
             // Récupère le dernier enregistrement
             $lastInstance = InstanceQuota::all()->last();
             

@@ -394,7 +394,7 @@ class CreateInstances extends Component
             // Lancer le Job sans passer de variables
             Log::info("eto");
             try{
-                dispatch(new ReplaceFreeSubdomain())->delay(now()->addSeconds(5));
+                dispatch(new ReplaceFreeSubdomain());
             } catch(\Exception $e){
                 dd($e->getMessage());
             }

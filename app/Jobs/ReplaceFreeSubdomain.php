@@ -101,6 +101,7 @@ class ReplaceFreeSubdomain implements ShouldQueue
             Log::info("Sous-domaine créé avec succès : $subDomain");
 
         } catch (\Exception $e) {
+            dd($e->getMessage());
             Log::error("Erreur lors de la création du sous-domaine : " . $e->getMessage());
         }
     }

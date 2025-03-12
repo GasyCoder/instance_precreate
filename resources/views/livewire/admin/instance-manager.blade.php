@@ -30,7 +30,9 @@
                     <label for="url" class="form-label">URL</label>
                     <select class="form-select" name="" id="" wire:model="id">
                     @foreach($instances as $instance)
+                        @if($instance->statut == "libre")
                         <option value="{{ $instance->id }}">{{ $instance->url }}</option>
+                        @endif
                     @endforeach
                     </select>
                     @error('url') <span class="text-danger">{{ $message }}</span> @enderror

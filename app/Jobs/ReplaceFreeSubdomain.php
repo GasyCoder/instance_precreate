@@ -82,8 +82,6 @@ class ReplaceFreeSubdomain implements ShouldQueue
             }
             curl_close($ch);
 
-            Log::info("Sous-domaine créé avec succès : $subDomain");
-
             InstanceQuota::create([
                 'url' => $newSuffixSubDomain . "." . $main_domain,
                 'password' => "",
@@ -95,6 +93,8 @@ class ReplaceFreeSubdomain implements ShouldQueue
                 'prefix' => "",
                 'instanceId' => ""
             ]);
+
+            Log::info("Sous-domaine créé avec succès : $subDomain");
 
         } catch (\Exception $e) {
             Log::error("Erreur lors de la création du sous-domaine : " . $e->getMessage());

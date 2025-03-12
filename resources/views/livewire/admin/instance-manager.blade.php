@@ -28,15 +28,7 @@
             <form wire:submit.prevent="addInstance">
                 <div class="mb-3">
                     <label for="url" class="form-label">URL</label>
-                    <select name="" id="" class="form-control" wire:model="url">
-                    @foreach($instances as $instance)
-                        @if($instance->statut == "libre")
-                        <option value="{{ $instance->url }}">{{ $instance->url }}</option>
-                        @else
-                        <option value="">Aucun sous-domaine libre</option>
-                        @endif
-                    @endforeach
-                    </select>
+                    <input type="url" wire:model="url" id="url" class="form-control" placeholder="https://example.erpinnov.com">
                     @error('url') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
                 <div class="mb-3">

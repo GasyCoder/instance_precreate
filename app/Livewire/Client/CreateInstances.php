@@ -17,6 +17,7 @@ use Livewire\WithPagination;
 use Illuminate\Support\Facades\DB;
 use App\Events\InstanceCreatedEvent;
 use App\Jobs\CreateDolibarrInstance;
+use App\Jobs\ReplaceFreeSubdomain;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -389,6 +390,8 @@ class CreateInstances extends Component
             $this->alert('success', 'Instance créée avec succès. Vos informations de connexion sont disponibles ci-dessous.');
             $this->dispatch('instanceCreationEnded');
 
+            // Lancer le Job sans passer de variables
+            dispatch(new ReplaceFreeSubdomain())->delay(now()->addSeconds(5));
             return true;
 
         } catch (\Exception $e) {

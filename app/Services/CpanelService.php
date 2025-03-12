@@ -74,7 +74,9 @@ class CpanelService
             {
                 $lastInstanceUrl = $lastInstance->url;;
 
-                $number = explode('.', $lastInstanceUrl)[0];
+                // Extraire le host (006.erpinnov.com)
+                $host = parse_url($lastInstanceUrl, PHP_URL_HOST);
+                $number = explode('.', $host)[0];
 
                 dd($number);
             }

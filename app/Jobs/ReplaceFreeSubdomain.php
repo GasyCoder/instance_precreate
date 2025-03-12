@@ -24,9 +24,10 @@ class ReplaceFreeSubdomain implements ShouldQueue
     public function handle()
     {
         try {
+            dd('eto');
             // Récupère le dernier enregistrement
             $lastInstance = InstanceQuota::all()->last();
-
+            
             if ($lastInstance) {
                 // Récupère l'URL et extrait le sous-domaine
                 $lastInstanceUrl = $lastInstance->url;

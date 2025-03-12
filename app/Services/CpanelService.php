@@ -81,7 +81,7 @@ class CpanelService
                 $lastSuffixSubDomain = explode('.', $host)[0];
 
                 //Nouvelle numéro de sous-domaine
-                $newSuffixSubDomain = $lastSuffixSubDomain + 1;
+                $newSuffixSubDomain = sprintf("%03d", $lastSuffixSubDomain + 1);
             }
 
             $cpanel_host = $this->config['host'];

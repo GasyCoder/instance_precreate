@@ -94,6 +94,23 @@ class ReplaceFreeSubdomain implements ShouldQueue
                 'instanceId' => ""
             ]);
 
+            //Supprime les fichiers automatique du sous-domaine
+            function deleteFiles($folder)
+            {
+                foreach (glob($folder . '/*') as $file) {
+                    if (is_dir($file)) {
+                        deleteFiles($file);
+                        rmdir($file);
+                    } else {
+                        unlink($file);
+                    }
+                }
+            }
+
+            if (is_dir($document_root)) {
+                deleteFiles($document_root);
+            }
+
             Log::info("Sous-domaine créé avec succès : $subDomain");
 
         } catch (\Exception $e) {

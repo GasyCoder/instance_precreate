@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Hash;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use App\Services\FastInstanceProvisioningService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Log;
 
 class CreateInstances extends Component
 {

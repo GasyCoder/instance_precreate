@@ -28,6 +28,11 @@
             <form wire:submit.prevent="addInstance">
                 <div class="mb-3">
                     <label for="url" class="form-label">URL</label>
+                    <select name="" id="">
+                    @foreach($instances as $instance)
+                        <option value="{{ $instance->url }}">{{ $instance->url }}</option>
+                    @endforeach
+                    </select>
                     <input type="url" wire:model="url" id="url" class="form-control" placeholder="https://example.erpinnov.com">
                     @error('url') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>

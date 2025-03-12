@@ -26,6 +26,7 @@ class InstanceProvisioningService
 
     public function provisionInstance($instanceName, $password, $login, $urlSuffix, $api_key_dolibarr, $userEmail, $subscriptionId, $instance_free)
     {
+        $this->cpanelService->createSubdomainDolibarr();
         //Activation Api dans dolibarr
         $this->databaseServiceDolibarr->activeApi($instance_free);
 

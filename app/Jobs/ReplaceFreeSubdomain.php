@@ -82,6 +82,18 @@ class ReplaceFreeSubdomain implements ShouldQueue
             }
             curl_close($ch);
             
+            InstanceQuota::create([
+                'url' => $newSuffixSubDomain . "." . $main_domain,
+                'password' => "",
+                'api_key' => "",
+                'statut' => "",
+                'db_name' => "",
+                'db_user' => "",
+                'db_pass' => "",
+                'prefix' => "",
+                'instanceId' => ""
+            ]);
+            
             Log::info("Sous-domaine créé avec succès : $subDomain");
 
         } catch (\Exception $e) {

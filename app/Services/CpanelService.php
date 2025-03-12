@@ -69,7 +69,7 @@ class CpanelService
         try{
 
             $instance = InstanceQuota::orderByRaw('CAST(SUBSTRING_INDEX(url, ".", 1) AS UNSIGNED) DESC')->first();
-
+            dd($instance);
             if($instance)
             {
                 $lastNumber = intval(explode('.', $instance->url)[0]);
@@ -78,7 +78,7 @@ class CpanelService
 
                 dd($newUrl);
             }
-            
+
             $cpanel_host = $this->config['host'];
             $cpanel_user = $this->config['user'];
             $api_token = $this->config['token'];

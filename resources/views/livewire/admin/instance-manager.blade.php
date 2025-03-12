@@ -28,7 +28,7 @@
             <form wire:submit.prevent="addInstance">
                 <div class="mb-3">
                     <label for="url" class="form-label">URL</label>
-                    <select name="" id="">
+                    <select name="" id="" class="form-control">
                     @foreach($instances as $instance)
                         <option value="{{ $instance->url }}">{{ $instance->url }}</option>
                     @endforeach

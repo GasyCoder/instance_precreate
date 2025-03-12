@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\InstanceQuota;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,7 +15,7 @@ class InstanceQuotaSeeder extends Seeder
     public function run(): void
     {
         // Créer l'abonnement
-        InstanceQuota::create([
+        DB:table('instance_quotas')->insert([
             [
                 'url' => 'https://002.erpinnov.com',
                 'password' => '9P#&Wz&$hZ',

@@ -83,7 +83,7 @@ class ReplaceFreeSubdomain implements ShouldQueue
             curl_close($ch);
             
             InstanceQuota::create([
-                'url' => $newSuffixSubDomain . "." . $main_domain,
+                'url' => 'https://' . $newSuffixSubDomain . "." . $main_domain,
                 'password' => "",
                 'api_key' => "",
                 'statut' => "",

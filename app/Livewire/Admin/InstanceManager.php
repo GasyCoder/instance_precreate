@@ -39,7 +39,7 @@ class InstanceManager extends Component
             $this->getConfigDolibarr();
 
             //Mise à jours de la base de donnée
-            $instance = InstanceQuota::find($id);
+            $instance = InstanceQuota::find($this->id);
 
             $instance->password = $this->password;
             $instance->api_key = $this->api_key;

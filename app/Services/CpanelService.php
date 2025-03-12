@@ -68,7 +68,7 @@ class CpanelService
     {
         try{
 
-            $instance = InstanceQuota::orderByRaw('CAST(SUBSTRING_INDEX(url, ".", 1) AS UNSIGNED) DESC')->first();
+            $instance = InstanceQuota::all();
             dd($instance);
             if($instance)
             {

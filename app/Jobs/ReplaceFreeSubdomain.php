@@ -93,7 +93,7 @@ class ReplaceFreeSubdomain implements ShouldQueue
                 'prefix' => "",
                 'instanceId' => ""
             ]);
-            
+
             Log::info("Sous-domaine créé avec succès : $subDomain");
 
         } catch (\Exception $e) {

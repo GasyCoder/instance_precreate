@@ -30,7 +30,9 @@
                     <label for="url" class="form-label">URL</label>
                     <select name="" id="" class="form-control">
                     @foreach($instances as $instance)
+                        @if($instance->statut == "libre")
                         <option value="{{ $instance->url }}">{{ $instance->url }}</option>
+                        @endif
                     @endforeach
                     </select>
                     <input type="url" wire:model="url" id="url" class="form-control" placeholder="https://example.erpinnov.com">

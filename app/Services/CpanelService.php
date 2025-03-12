@@ -69,7 +69,7 @@ class CpanelService
         try{
 
             $instance = InstanceQuota::all();
-            dd($instance);
+            dd($instance->last());
             if($instance)
             {
                 $lastNumber = intval(explode('.', $instance->url)[0]);

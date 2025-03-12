@@ -67,16 +67,16 @@ class CpanelService
     public function createSubdomainDolibarr()
     {
         try{
+            //Récupère la dernière sous-domaine enregistrée
+            $lastInstance = InstanceQuota::all()->last();
 
-            $instance = InstanceQuota::all()->last();
-            dd($instance);
-            if($instance)
+            if($lastInstance)
             {
-                $lastNumber = intval(explode('.', $instance->url)[0]);
+                $lastInstanceUrl = $lastInstance->url;;
 
-                $newUrl = sprintf("%03d.erpinnov.com", $lastNumber + 1);
+                $number = explode('.', $lastInstanceUrl)[0];
 
-                dd($newUrl);
+                dd($number);
             }
 
             $cpanel_host = $this->config['host'];

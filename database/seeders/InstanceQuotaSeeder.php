@@ -15,7 +15,7 @@ class InstanceQuotaSeeder extends Seeder
     public function run(): void
     {
         // Créer l'abonnement
-        DB:table('instance_quotas')->insert([
+        DB::table('instance_quotas')->insert([
             [
                 'url' => 'https://002.erpinnov.com',
                 'password' => '9P#&Wz&$hZ',

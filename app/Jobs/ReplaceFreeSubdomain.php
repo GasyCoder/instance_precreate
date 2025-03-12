@@ -16,9 +16,9 @@ class ReplaceFreeSubdomain implements ShouldQueue
 
     protected $config;
 
-    public function __construct($config)
+    public function __construct()
     {
-        $this->config = $config;
+        $this->config = Config::get('dolibarr.cpanel');
     }
 
     public function handle()

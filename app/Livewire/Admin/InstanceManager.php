@@ -34,6 +34,8 @@ class InstanceManager extends Component
     public function addInstance()
     {
         try{
+            dd($this->id);
+            
             //Récupère les configurations de l'instance
             $this->getConfigDolibarr();
 

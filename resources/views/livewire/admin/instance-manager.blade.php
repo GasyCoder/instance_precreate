@@ -28,7 +28,7 @@
             <form wire:submit.prevent="addInstance">
                 <div class="mb-3">
                     <label for="url" class="form-label">URL</label>
-                    <select class="form-select" name="" id="" wire:model="id">
+                    <select class="form-select" wire:model="id">
                     @foreach($instances as $instance)
                         @if($instance->statut == "libre")
                         <option value="{{ $instance->id }}">{{ $instance->url }}</option>

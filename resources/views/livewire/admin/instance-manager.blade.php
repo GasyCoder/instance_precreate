@@ -35,7 +35,7 @@
                         @endif
                     @endforeach
                     </select>
-                    @error('url') <span class="text-danger">{{ $message }}</span> @enderror
+                    @error('id') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Mot de passe</label>

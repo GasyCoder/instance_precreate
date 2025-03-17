@@ -11,7 +11,7 @@ class InstanceManager extends Component
 {
     use LivewireAlert;
 
-    public $id, $url, $password, $api_key, $dbName, $dbUser, $dbPass, $instanceId, $prefix, $statut = 'libre';
+    public $id, $password, $api_key, $dbName, $dbUser, $dbPass, $instanceId, $prefix, $statut = 'libre';
     public $libres, $attribues;
     
     protected $rules = [

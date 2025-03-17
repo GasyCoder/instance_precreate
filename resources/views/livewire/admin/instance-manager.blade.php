@@ -29,6 +29,7 @@
                 <div class="mb-3">
                     <label class="form-label">URL</label>
                     <select class="form-select" wire:model="id">
+                        <option value="">Séléctionné l'url de l'instance</option>
                     @foreach($instances as $instance)
                         @if($instance->statut == "libre")
                         <option value="{{ $instance->id }}">{{ $instance->url }}</option>

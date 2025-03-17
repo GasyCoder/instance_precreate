@@ -31,7 +31,7 @@
                     <select class="form-select" id="id" wire:model="id">
                         <option value="">Séléctionné l'url de l'instance</option>
                     @foreach($instances as $instance)
-                        @if($instance->statut == "libre")
+                        @if($instance->password == "")
                         <option value="{{ $instance->id }}">{{ $instance->url }}</option>
                         @endif
                     @endforeach

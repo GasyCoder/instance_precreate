@@ -51,18 +51,6 @@ class InstanceManager extends Component
             $instance->instanceId = $this->instanceId;
 
             $instance->save();
-            //Insertion dans la base de donnée
-            // InstanceQuota::create([
-            //     'url' => $this->url,
-            //     'password' => $this->password,
-            //     'api_key' => $this->api_key,
-            //     'statut' => $this->statut,
-            //     'db_name' => $this->dbName,
-            //     'db_user' => $this->dbUser,
-            //     'db_pass' => $this->dbPass,
-            //     'prefix' => $this->prefix,
-            //     'instanceId' => $this->instanceId
-            // ]);
     
             $this->reset(['id', 'password', 'api_key', 'statut']);
             $this->updateCounts();

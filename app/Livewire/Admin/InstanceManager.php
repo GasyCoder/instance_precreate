@@ -35,8 +35,6 @@ class InstanceManager extends Component
     public function addInstance()
     {
         try{
-            dd($this->id);
-
             //Récupère les configurations de l'instance
             $this->getConfigDolibarr();
 
@@ -66,7 +64,7 @@ class InstanceManager extends Component
             //     'instanceId' => $this->instanceId
             // ]);
     
-            $this->reset(['password', 'api_key', 'statut']);
+            $this->reset(['id', 'password', 'api_key', 'statut']);
             $this->updateCounts();
             $this->dispatch('instanceAdded'); // Rafraîchit la liste
         } catch(\Exception $e){

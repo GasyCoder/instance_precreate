@@ -27,7 +27,7 @@
         <div class="card-body">
             <form wire:submit.prevent="addInstance">
                 <div class="mb-3">
-                    <label for="url" class="form-label">URL</label>
+                    <label class="form-label">URL</label>
                     <select class="form-select" wire:model="id">
                     @foreach($instances as $instance)
                         @if($instance->statut == "libre")

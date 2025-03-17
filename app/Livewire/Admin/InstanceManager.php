@@ -15,6 +15,7 @@ class InstanceManager extends Component
     public $libres, $attribues;
     
     protected $rules = [
+        'id' => 'required',
         'password' => 'required|password|unique',
         'api_key' => 'requierd|api_key|unique',
         'statut' => 'required|in:libre,attribué'
@@ -35,7 +36,7 @@ class InstanceManager extends Component
     {
         try{
             dd($this->id);
-            
+
             //Récupère les configurations de l'instance
             $this->getConfigDolibarr();
 

@@ -105,8 +105,8 @@ class AddInDolibarr implements ShouldQueue
                 if (!empty($item->country_id)) {
                     try {
                         $countryResponse = Http::withHeaders([
-                            'DOLAPIKEY' => $user->api_key
-                        ])->get($user->url_dolibarr . '/api/index.php/setup/dictionary/countries/' . $item->country_id);
+                            'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN'
+                        ])->get('https://g.erpinnov.com' . '/api/index.php/setup/dictionary/countries/' . $item->country_id);
 
                         if ($countryResponse->successful()) {
                             $country = $countryResponse->json();

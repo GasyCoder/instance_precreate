@@ -57,7 +57,7 @@ class UpdateContactDolibarr implements ShouldQueue
                     $contactUpdate = $contact;
                 }
             }
-            $contactId = $contactUpdate->id;
+            //$contactId = $contactUpdate->id;
             /*$apiData = [
                 ...$this->value, // Contient les nouvelles valeurs
                 'statut' => 1,

@@ -20,8 +20,24 @@ class UpdateContactDolibarr implements ShouldQueue
     public $email;
     protected $config;
 
-    public function __construct($profile)
+    private $civilityMap = [
+        'MME' => 'Madame',
+        'MR' => 'Monsieur',
+        'MLE' => 'Mademoiselle',
+        'MTRE' => 'Maître',
+        'DR' => 'Docteur',
+    ];
+
+    private $countryCodeMap = [
+        '1' => 'FR',
+        '2' => 'BE',
+        '6' => 'CH',
+        '143' => 'MG',
+    ];
+
+    public function __construct($profile, $email)
     {
+        $this->email = $email;
         $this->profile = $profile;
         $this->config = Config::get('dolibarr.cpanel');
     }
@@ -29,33 +45,36 @@ class UpdateContactDolibarr implements ShouldQueue
     public function handle()
     {
         Log::info($this->profile);
-        /*$this->getContact();
+        // $this->getContact();
         $this->setValue();
         
         try {
+            $contactLastname = $this->email; // Remplace par l'ID du contact à modifier
+        
             $apiData = [
-                ...$this->value,
+                ...$this->value, // Contient les nouvelles valeurs
                 'statut' => 1,
                 'entity' => 1
             ];
-
-            Log::info('Données envoyées à l\'API:', $apiData);
-            
+        
+            Log::info('Données envoyées pour modification:', $apiData);
+        
             $response = Http::withHeaders([
                 'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN',
                 'Accept' => 'application/json'
-            ])->post('https://g.erpinnov.com' . '/api/index.php/contacts', $apiData);
-
+            ])->put("https://g.erpinnov.com/api/index.php/contacts/{$contactLastname}", $apiData);
+        
             if (!$response->successful()) {
                 Log::error('Réponse API Dolibarr: ' . $response->body());
                 throw new Exception('Erreur API: ' . $response->body());
             }
-
-            Log::info('contact créer avec succès');
+        
+            Log::info('Contact modifié avec succès');
         } catch (Exception $e) {
-            Log::error('Erreur création de contact: ' . $e->getMessage());
+            Log::error('Erreur modification de contact: ' . $e->getMessage());
             return back()->withInput()->withErrors(['error' => $e->getMessage()]);
-        }*/
+        }
+        
 
         
     }
@@ -108,6 +127,10 @@ class UpdateContactDolibarr implements ShouldQueue
     {
         $this->value = [
             'lastname' => $this->email,
+            'civility' => $this->profile['civility'],
+            'phone_mobile' => $this->profile['telephone'],
+            'address' => $this->profile['adresse'],
+            'town' => $this->profile['ville']
         ];    
     }
 }

@@ -34,7 +34,7 @@ class ProfileController extends Controller
 
                 // Lancer le Job de mise à jours du contact dans dolibarr
                 try{
-                    (new UpdateContactDolibarr($profile))->handle();
+                    (new UpdateContactDolibarr($profile, $user->email))->handle();
                 } catch(\Exception $e){
                     dd($e->getMessage());
                 }

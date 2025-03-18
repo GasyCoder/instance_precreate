@@ -91,7 +91,7 @@ class AddInDolibarr implements ShouldQueue
             // Récupération des tiers depuis l'API Dolibarr
             $response = Http::withHeaders([
                 'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN' 
-            ])->get($user->url_dolibarr . '/api/index.php/contacts');
+            ])->get('https://g.erpinnov.com' . '/api/index.php/contacts');
 
             if (!$response->successful()) {
                 throw new Exception('Erreur API: ' . $response->status());

@@ -51,7 +51,7 @@ class AddInDolibarr implements ShouldQueue
                 throw new Exception('Erreur API: ' . $response->body());
             }
 
-            return redirect('/contact')->with('success', 'Contact créé avec succès');
+            Log::info('contact créer avec succès');
         } catch (Exception $e) {
             Log::error('Erreur création de contact: ' . $e->getMessage());
             return back()->withInput()->withErrors(['error' => $e->getMessage()]);

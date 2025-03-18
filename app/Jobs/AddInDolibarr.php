@@ -95,7 +95,7 @@ class AddInDolibarr implements ShouldQueue
             ])->get('https://g.erpinnov.com' . '/api/index.php/contacts');
 
             if (!$response->successful()) {
-                throw new Exception('Erreur API: ' . $response->status());
+                Log::info('Erreur API: ' . $response->status());
             }
 
             // Conversion du tableau en objets pour faciliter l'utilisation dans la vue

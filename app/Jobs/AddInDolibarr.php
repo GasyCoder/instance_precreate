@@ -135,7 +135,7 @@ class AddInDolibarr implements ShouldQueue
     {
         $this->value = [
             'code_contact' => $this->code_contact,
-            'email' => $this->email,
+            'lastname' => $this->email,
         ];
         
     }

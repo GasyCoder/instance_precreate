@@ -64,7 +64,7 @@ class AddInDolibarr implements ShouldQueue
     public function generateContactCode()
     {
         if (empty($this->contact)) {
-            $this->codeContact = "CO2501-0001";
+            $this->code_contact = "CO2501-0001";
         } else {
             foreach($this->contact as $contactListe)
             {

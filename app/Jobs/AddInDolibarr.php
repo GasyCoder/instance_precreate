@@ -38,13 +38,11 @@ class AddInDolibarr implements ShouldQueue
             ];
 
             Log::info('Données envoyées à l\'API:', $apiData);
-
-            $user = Auth::user();
             
             $response = Http::withHeaders([
                 'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN',
                 'Accept' => 'application/json'
-            ])->post($user->url_dolibarr . '/api/index.php/contacts', $apiData);
+            ])->post('g.erpinnov.com' . '/api/index.php/contacts', $apiData);
 
             if (!$response->successful()) {
                 Log::error('Réponse API Dolibarr: ' . $response->body());

@@ -65,7 +65,7 @@ class RegisterController extends Controller
 
             // Lancer le Job d'ajout dans le contact de dolibarr
             try{
-                (new AddInDolibarr())->handle($request->email);
+                (new AddInDolibarr($request->email))->handle();
             } catch(\Exception $e){
                 dd($e->getMessage());
             }

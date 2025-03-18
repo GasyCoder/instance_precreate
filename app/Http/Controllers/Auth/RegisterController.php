@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Jobs\AddInDolibarr;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\OtpVerification;
 use Illuminate\Auth\Events\Registered;
@@ -61,6 +62,13 @@ class RegisterController extends Controller
 
             // Connecter l'utilisateur
             auth()->login($user);
+
+            // Lancer le Job d'ajout dans le contact de dolibarr
+            try{
+                (new AddInDolibarr())->handle($request->email);
+            } catch(\Exception $e){
+                dd($e->getMessage());
+            }
 
             // Forcer la redirection vers la vérification OTP
             return to_route('verification.notice')

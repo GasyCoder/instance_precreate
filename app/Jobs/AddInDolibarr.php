@@ -124,7 +124,7 @@ class AddInDolibarr implements ShouldQueue
                 return $item;
             })->all();
 
-            Log::info('contact récupérer avec succès');
+            Log::info('contact récupérer avec succès' . $this->contact);
                
         } catch (Exception $e) {
             Log::info('Erreur lors de la récupération des contacts: ' . $e->getMessage());

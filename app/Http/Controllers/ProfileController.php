@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use App\Jobs\UpdateContactDolibarr;
 
 class ProfileController extends Controller
 {

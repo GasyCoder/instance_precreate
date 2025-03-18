@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\Log;
 class AddInDolibarr implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    public $codeContact;
-    public $code_contact;
     public $contact;
     public $email;
     protected $config;
@@ -30,7 +28,6 @@ class AddInDolibarr implements ShouldQueue
     public function handle()
     {
         $this->getContact();
-        $this->generateContactCode();
         $this->setValue();
         
         try {
@@ -59,32 +56,6 @@ class AddInDolibarr implements ShouldQueue
         }
 
         
-    }
-
-    public function generateContactCode()
-    {
-        if (empty($this->contact)) {
-            $this->code_contact = "CO2501-0001";
-        } else {
-            foreach($this->contact as $contactListe)
-            {
-                $this->codeContact = $contactListe->code_contact;
-            }
-            // Récupérer le dernier code contact
-            $lastCode = $this->codeContact;
-
-            // Extraire la partie numérique après le tiret
-            if (preg_match('/^(.*-)(\d+)$/', $lastCode, $matches)) {
-                $prefix = $matches[1];
-                $number = (int) $matches[2];
-
-                // Incrémenter le numéro
-                $newNumber = str_pad($number + 1, strlen($matches[2]), '0', STR_PAD_LEFT);
-
-                // Retourner le nouveau code contact
-                $this->code_contact = $prefix . $newNumber;
-            }
-        }
     }
 
     public function getContact()
@@ -134,9 +105,7 @@ class AddInDolibarr implements ShouldQueue
     public function setValue()
     {
         $this->value = [
-            'code_contact' => $this->code_contact,
             'lastname' => $this->email,
-        ];
-        
+        ];    
     }
 }

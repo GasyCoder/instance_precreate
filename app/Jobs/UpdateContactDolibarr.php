@@ -45,32 +45,40 @@ class UpdateContactDolibarr implements ShouldQueue
     public function handle()
     {
         Log::info($this->profile);
-        // $this->getContact();
+        $this->getContact();
         $this->setValue();
         
         try {
             $email = $this->email; // Remplace par l'ID du contact à modifier
-        
-            $apiData = [
+            foreach($this->contact as $contact)
+            {
+                if($contact->email == $email)
+                {
+                    $contactUpdate = $contact;
+                }
+            }
+            $contactId = $contactUpdate->id;
+            /*$apiData = [
                 ...$this->value, // Contient les nouvelles valeurs
                 'statut' => 1,
                 'entity' => 1
-            ];
+            ];*/
         
-            Log::info('Données envoyées pour modification:', $apiData);
-        
-            $response = Http::withHeaders([
-                'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN'
-            ])->get('https://g.erpinnov.com/api/index.php/contacts', [
-                'sqlfilters' => "(email:like:'$email')"
-            ]);
+            //Log::info('Données envoyées pour modification:', $apiData);
+            Log::info('Données envoyées pour modification:', $contactUpdate);
 
-            if (!$response->successful()) {
-                Log::error('Réponse API Dolibarr: ' . $response->body());
-                throw new Exception('Erreur API: ' . $response->body());
-            }
+            // $response = Http::withHeaders([
+            //     'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN'
+            // ])->get('https://g.erpinnov.com/api/index.php/contacts', [
+            //     'sqlfilters' => "(email:like:'$email')"
+            // ]);
+
+            // if (!$response->successful()) {
+            //     Log::error('Réponse API Dolibarr: ' . $response->body());
+            //     throw new Exception('Erreur API: ' . $response->body());
+            // }
         
-            Log::info('Contact recupérer' . $response->json());
+            //Log::info('Contact recupérer' . $response->json());
         } catch (Exception $e) {
             Log::error('Erreur modification de contact: ' . $e->getMessage());
             return back()->withInput()->withErrors(['error' => $e->getMessage()]);

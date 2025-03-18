@@ -3,6 +3,7 @@ namespace App\Jobs;
 
 use App\Models\InstanceQuota;
 use Illuminate\Bus\Queueable;
+use Exception;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

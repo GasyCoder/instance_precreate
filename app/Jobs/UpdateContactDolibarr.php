@@ -65,7 +65,7 @@ class UpdateContactDolibarr implements ShouldQueue
             ];*/
         
             //Log::info('Données envoyées pour modification:', $apiData);
-            Log::info('Données envoyées pour modification:', $contactUpdate);
+            Log::info('Données envoyées pour modification:', $this->contact);
 
             // $response = Http::withHeaders([
             //     'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN'

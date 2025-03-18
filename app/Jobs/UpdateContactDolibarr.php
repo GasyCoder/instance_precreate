@@ -49,7 +49,7 @@ class UpdateContactDolibarr implements ShouldQueue
         $this->setValue();
         
         try {
-            $contactLastname = $this->email; // Remplace par l'ID du contact à modifier
+            $email = $this->email; // Remplace par l'ID du contact à modifier
         
             $apiData = [
                 ...$this->value, // Contient les nouvelles valeurs
@@ -60,16 +60,17 @@ class UpdateContactDolibarr implements ShouldQueue
             Log::info('Données envoyées pour modification:', $apiData);
         
             $response = Http::withHeaders([
-                'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN',
-                'Accept' => 'application/json'
-            ])->put("https://g.erpinnov.com/api/index.php/contacts/{$contactLastname}", $apiData);
-        
+                'DOLAPIKEY' => 'V8ARU7g614rfiu5Dft2fbj4P6xXDO9TN'
+            ])->get('https://g.erpinnov.com/api/index.php/contacts', [
+                'sqlfilters' => "(email:like:'$email')"
+            ]);
+
             if (!$response->successful()) {
                 Log::error('Réponse API Dolibarr: ' . $response->body());
                 throw new Exception('Erreur API: ' . $response->body());
             }
         
-            Log::info('Contact modifié avec succès');
+            Log::info('Contact recupérer' . $response->json());
         } catch (Exception $e) {
             Log::error('Erreur modification de contact: ' . $e->getMessage());
             return back()->withInput()->withErrors(['error' => $e->getMessage()]);

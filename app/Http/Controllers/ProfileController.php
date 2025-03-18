@@ -31,6 +31,13 @@ class ProfileController extends Controller
                 // Ajouter le flag dans la session
                 session(['profile_updated' => true]);
 
+                // Lancer le Job de mise à jours du contact dans dolibarr
+                try{
+                    (new UpdateContactDolibarr($profile))->handle();
+                } catch(\Exception $e){
+                    dd($e->getMessage());
+                }
+
                 return redirect()->route('espaceClient')
                     ->with('success', 'Profil mis à jour avec succès.');
             }

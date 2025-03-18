@@ -28,6 +28,7 @@ class AddInDolibarr implements ShouldQueue
 
     public function handle()
     {
+        $this->getContact();
         $this->generateContactCode();
         $this->setValue();
         

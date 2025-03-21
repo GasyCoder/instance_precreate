@@ -131,8 +131,9 @@ class UpdateContactDolibarr implements ShouldQueue
     {
         $country_code = $this->profile['pays'];
         $this->value = [
-            'lastname' => $this->profile['fname'] . ' ' . $this->profile['lname'] ,
-            'firstname' => $this->email,
+            'lastname' => $this->profile['fname'],
+            'firstname' => $this->profile['lname'],
+            'email' => $this->email,
             'civility_code' => strtoupper($this->profile['civility']),
             'civility' =>  $this->civilityMap[strtoupper($this->profile['civility'])] ?? 'Unknown',
             'phone_mobile' => $this->profile['telephone'],

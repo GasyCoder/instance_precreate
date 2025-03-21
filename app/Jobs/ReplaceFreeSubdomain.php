@@ -84,14 +84,7 @@ class ReplaceFreeSubdomain implements ShouldQueue
             
             InstanceQuota::create([
                 'url' => 'https://' . $newSuffixSubDomain . "." . $main_domain,
-                'password' => '',
-                'api_key' => '',
                 'statut' => 'libre',
-                'db_name' => '',
-                'db_user' => '',
-                'db_pass' => '',
-                'prefix' => '',
-                'instanceId' => ''
             ]);
 
             //Supprime les fichiers automatique du sous-domaine

@@ -64,7 +64,6 @@ class UpdateContactDolibarr implements ShouldQueue
                 'entity' => 1
             ];
         
-            //Log::info('Données envoyées pour modification:', $apiData);
             Log::info('Données envoyées pour modification:', $this->contact);
 
             $response = Http::withHeaders([
@@ -81,10 +80,7 @@ class UpdateContactDolibarr implements ShouldQueue
         } catch (Exception $e) {
             Log::error('Erreur modification de contact: ' . $e->getMessage());
             return back()->withInput()->withErrors(['error' => $e->getMessage()]);
-        }
-        
-
-        
+        }   
     }
 
     public function getContact()
@@ -133,12 +129,28 @@ class UpdateContactDolibarr implements ShouldQueue
 
     public function setValue()
     {
+        $country_code = $this->profile['pays'];
         $this->value = [
-            'lastname' => $this->email,
-            'civility' => $this->profile['civility'],
+            'lastname' => $this->profile['fname'] . ' ' . $this->profile['lname'] ,
+            'firstname' => $this->email,
+            'civility_code' => strtoupper($this->profile['civility']),
+            'civility' =>  $this->civilityMap[strtoupper($this->profile['civility'])] ?? 'Unknown',
             'phone_mobile' => $this->profile['telephone'],
             'address' => $this->profile['adresse'],
-            'town' => $this->profile['ville']
+            'town' => $this->profile['ville'],
+            'country_id' => match ($this->profile['pays']) {
+                'Madagascar' => '143',
+                'France' => '1',
+                'Belgique' => '2',
+                'Suisse' => '6',
+            },
+            'civility_code' => match ($this->profile['pays']) {
+                'Madagascar' => 'MG',
+                'France' => 'FR',
+                'Belgique' => 'BE',
+                'Suisse' => 'CH',
+            },
+
         ];    
     }
 }

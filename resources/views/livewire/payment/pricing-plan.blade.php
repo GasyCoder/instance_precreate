@@ -52,6 +52,9 @@
                             <p class="mt-2 text-light-muted dark:text-dark-muted">{{ $plan->description }}</p>
                         </div>
                         {{-- Prix --}}
+                        @php 
+                            $user = Auth::user();
+                        @endphp
                         @if($plan->name === 'Solo')
                             <div class="text-right">
                                 <div class="flex flex-col items-end">
@@ -60,13 +63,16 @@
                                             $basicPlan = $plan->subPlans->where('is_default', true)->first();
                                         @endphp
                                         <div class="text-sm text-light-muted dark:text-dark-muted">À partir de</div>
+                                        @if($user->profile->pays !== "Madagascar")
                                         <div class="flex items-baseline mt-1">
                                             <span class="text-3xl font-bold text-light-text dark:text-dark-text">{{ number_format($isYearly ? $basicPlan->price_yearly/12 : $basicPlan->price_monthly, 2) }}€</span>
                                             <span class="ml-1 text-light-muted dark:text-dark-muted">/mois</span>
                                         </div>
+                                        @else
                                         <div class="mt-1 text-sm text-light-muted dark:text-dark-muted">
-                                            ou {{ number_format($basicPlan->price_local, 0) }} Ar/mois
+                                            {{ number_format($basicPlan->price_local, 0) }} Ar/mois
                                         </div>
+                                        @endif
                                         @if($isYearly)
                                             <div class="mt-2 inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
                                                 Économisez 10% sur l'abonnement annuel

@@ -148,13 +148,16 @@
                                                                     </ul>
                                                                 </div>
                                                                 <div class="text-right">
+                                                                    @if($suer->profile->pays !== "Madagascar")
                                                                     <p class="font-medium text-light-text dark:text-dark-text">
                                                                         {{ number_format($isYearly ? $subPlan->price_yearly/12 : $subPlan->price_monthly, 2) }}€
                                                                         <span class="text-sm text-light-muted dark:text-dark-muted">/mois</span>
                                                                     </p>
+                                                                    @else
                                                                     <p class="text-sm text-light-muted dark:text-dark-muted">
                                                                         {{ number_format($subPlan->price_local, 0) }} Ar/mois
                                                                     </p>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>

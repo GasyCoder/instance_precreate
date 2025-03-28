@@ -46,8 +46,8 @@ export default defineComponent({
                     id: 1,
                     numericValue: 1000,
                     suffix: '+',
-                    label: 'Entreprises actives',
-                    icon: 'ri-laptop',
+                    label: 'Documentation en ligne, chat d\'assistance, ticket réponse sous 24h',
+                    icon: 'ri-laptop-line',
                     iconBgClass: 'bg-label-hover-primary',
                     options: {
                         useEasing: true,

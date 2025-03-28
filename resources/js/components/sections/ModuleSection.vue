@@ -76,7 +76,7 @@ export default defineComponent({
                     id: 3,
                     suffix: 'Finance & Facturation',
                     label: 'Optimisez votre gestion financière. Paiement et Rapprochement bancaire',
-                    icon: 'ri-vip-diamond-fill',
+                    icon: 'ri-bank-fill',
                     iconBgClass: 'bg-label-hover-success',
                     options: {
                         useEasing: true,
@@ -89,7 +89,7 @@ export default defineComponent({
                     id: 4,
                     suffix: 'Produit & Stock',
                     label: 'Gérer efficacement vos Produits, Services, Stocks, Achats et Expéditions',
-                    icon: 'ri-shield-check-fill',
+                    icon: 'ri-product-hunt-line',
                     iconBgClass: 'bg-label-hover-warning',
                     options: {
                         useEasing: true,
@@ -102,7 +102,7 @@ export default defineComponent({
                     id: 5,
                     suffix: 'Ressources Humaines',
                     label: 'Noter solution simplifie la gestion de vos RH avecdes outils intuitifs',
-                    icon: 'ri-shield-check-fill',
+                    icon: 'ri-account-circle-fill',
                     iconBgClass: 'bg-label-hover-warning',
                     options: {
                         useEasing: true,
@@ -115,7 +115,7 @@ export default defineComponent({
                     id: 6,
                     suffix: 'Productivité',
                     label: 'Améliorez votre Productivité en gérant efficacement Projets et Tâches.',
-                    icon: 'ri-shield-check-fill',
+                    icon: 'ri-line-chart-fill',
                     iconBgClass: 'bg-label-hover-warning',
                     options: {
                         useEasing: true,

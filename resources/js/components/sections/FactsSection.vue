@@ -10,6 +10,8 @@
                     <span :class="['badge', 'rounded-pill', fact.iconBgClass, 'fun-facts-icon', 'mb-6', 'p-5']">
                         <i :class="['tf-icons', fact.icon, 'ri-42px']"></i>
                     </span>
+                    <i class="ri-laptop-line"></i>
+
                     <h2 class="fw-bold mb-0 fun-facts-text">
                         <count-up
                             :startVal="0"
@@ -82,21 +84,6 @@ export default defineComponent({
                         useGrouping: true,
                         separator: ' ',
                         decimal: '.',
-                    }
-                },
-                {
-                    id: 4,
-                    numericValue: 99.9,
-                    suffix: '%',
-                    label: 'Disponibilité cloud',
-                    icon: 'ri-cloud-line',
-                    iconBgClass: 'bg-label-hover-info',
-                    options: {
-                        useEasing: true,
-                        useGrouping: true,
-                        separator: ' ',
-                        decimal: '.',
-                        decimals: 1
                     }
                 }
             ]

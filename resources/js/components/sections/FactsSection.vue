@@ -62,7 +62,7 @@ export default defineComponent({
                     numericValue: 4,
                     suffix: '.8/5',
                     label: 'Très bien noté',
-                    icon: 'ri-vip-diamond-fil',
+                    icon: 'ri-vip-diamond-fill',
                     iconBgClass: 'bg-label-hover-success',
                     options: {
                         useEasing: true,

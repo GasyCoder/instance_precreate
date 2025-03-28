@@ -92,7 +92,6 @@ export default defineComponent({
                 },
                 {
                     id: 4,
-                    numericValue: 30,
                     suffix: 'jours',
                     label: 'Essai gratuit',
                     icon: 'ri-shield-check-fill',

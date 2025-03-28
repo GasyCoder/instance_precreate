@@ -23,7 +23,7 @@
                     <h2 class="fw-bold mb-0 fun-facts-text">
                         {{ fact.suffix}}
                     </h2>
-                    
+
                     <h6 class="mb-0 text-body">{{ fact.label }}</h6>
                 </div>
             </div>
@@ -49,7 +49,7 @@ export default defineComponent({
                     id: 1,
                     numericValue: null,
                     suffix: 'CRM & Ventes',
-                    label: 'Documentation en ligne, chat d\'assistance, ticket réponse sous 24h',
+                    label: 'Le CRM vous aide à gérer vos clients de manière efficace et personnalisée.',
                     icon: 'ri-macbook-line',
                     iconBgClass: 'bg-label-hover-primary',
                     options: {
@@ -62,7 +62,7 @@ export default defineComponent({
                 {
                     id: 2,
                     suffix: 'Marketing',
-                    label: 'Rejoigner nous',
+                    label: 'Bostez votre stratégie Marketing avec des outils performants',
                     icon: 'ri-account-circle-fill',
                     iconBgClass: 'bg-label-hover-success',
                     options: {
@@ -75,7 +75,7 @@ export default defineComponent({
                 {
                     id: 3,
                     suffix: 'Finance & Facturation',
-                    label: 'Très bien noté',
+                    label: 'Optimisez votre gestion financière. Paiement et Rapprochement bancaire',
                     icon: 'ri-vip-diamond-fill',
                     iconBgClass: 'bg-label-hover-success',
                     options: {
@@ -87,9 +87,34 @@ export default defineComponent({
                 },
                 {
                     id: 4,
-                    numericValue: 30,
-                    suffix: 'jours',
-                    label: 'Essai gratuit',
+                    suffix: 'Produit & Stock',
+                    label: 'Gérer efficacement vos Produits, Services, Stocks, Achats et Expéditions',
+                    icon: 'ri-shield-check-fill',
+                    iconBgClass: 'bg-label-hover-warning',
+                    options: {
+                        useEasing: true,
+                        useGrouping: true,
+                        separator: ' ',
+                        decimal: '.',
+                    }
+                },
+                {
+                    id: 5,
+                    suffix: 'Ressources Humaines',
+                    label: 'Noter solution simplifie la gestion de vos RH avecdes outils intuitifs',
+                    icon: 'ri-shield-check-fill',
+                    iconBgClass: 'bg-label-hover-warning',
+                    options: {
+                        useEasing: true,
+                        useGrouping: true,
+                        separator: ' ',
+                        decimal: '.',
+                    }
+                },
+                {
+                    id: 6,
+                    suffix: 'Productivité',
+                    label: 'Améliorez votre Productivité en gérant efficacement Projets et Tâches.',
                     icon: 'ri-shield-check-fill',
                     iconBgClass: 'bg-label-hover-warning',
                     options: {

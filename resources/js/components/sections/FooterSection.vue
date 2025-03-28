@@ -13,7 +13,7 @@
                             <span class="app-brand-logo demo me-2">
                                 <!-- Logo -->
                             </span>
-                            <span class="app-brand-text demo footer-link fw-semibold ms-1">ERP INNOV</span>
+                            <span class="app-brand-text demo footer-link fw-semibold ms-1">ERP INNOV2</span>
                         </a>
                         <p class="footer-text footer-logo-description mb-6">
                             {{ description }}

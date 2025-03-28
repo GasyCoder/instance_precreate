@@ -7,9 +7,16 @@
                      class="col-md-3 col-sm-6 text-center"
                      data-aos="fade-up"
                      :data-aos-delay="fact.id * 100">
+                     
                     <span :class="['badge', 'rounded-pill', fact.iconBgClass, 'fun-facts-icon', 'mb-6', 'p-5']">
                         <i :class="['tf-icons', fact.icon, 'ri-42px']"></i>
                     </span>
+
+                    <p class="text-center fw-medium mb-10">
+                        Nos modules pôur simplifier votre gestion.
+                    </p>
+
+                    <p>Des outils adaptés pour gagner du temps et répondre à vos besoins.</p>
 
                     <h2 class="fw-bold mb-0 fun-facts-text">
                         <count-up

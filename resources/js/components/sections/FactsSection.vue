@@ -10,7 +10,6 @@
                     <span :class="['badge', 'rounded-pill', fact.iconBgClass, 'fun-facts-icon', 'mb-6', 'p-5']">
                         <i :class="['tf-icons', fact.icon, 'ri-42px']"></i>
                     </span>
-                    <i class="ri-laptop-line"></i>
 
                     <h2 class="fw-bold mb-0 fun-facts-text">
                         <count-up
@@ -49,7 +48,7 @@ export default defineComponent({
                     numericValue: 1000,
                     suffix: '+',
                     label: 'Documentation en ligne, chat d\'assistance, ticket réponse sous 24h',
-                    icon: 'ri-laptop-line',
+                    icon: 'ri-macbook-line',
                     iconBgClass: 'bg-label-hover-primary',
                     options: {
                         useEasing: true,
@@ -76,7 +75,7 @@ export default defineComponent({
                     id: 3,
                     numericValue: 10000,
                     suffix: '+',
-                    label: 'Utilisateurs satisfaits',
+                    label: '30 jours essai gratuit',
                     icon: 'ri-group-line',
                     iconBgClass: 'bg-label-hover-warning',
                     options: {

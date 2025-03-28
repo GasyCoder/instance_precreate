@@ -25,12 +25,14 @@ import CTASection from './sections/CTASection.vue'
 // import ContactSection from './sections/ContactSection.vue'
 import FooterSection from './sections/FooterSection.vue'
 import ScrollSection from './sections/ScrollSection.vue'
+import DiscoverSection from './sections/DiscoverSection.vue'
 
 export default {
     name: 'App',
     components: {
         NavSection,
         HeroSection,
+        DiscoverSection,
         PricingSection,
         FactsSection,
         FaqSection,

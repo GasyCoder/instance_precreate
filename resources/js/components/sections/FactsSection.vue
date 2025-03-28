@@ -106,7 +106,7 @@ export default defineComponent({
 <style scoped>
 #landingFunFacts {
     display: flex;
-    align-items: center;  /* Centre verticalement */
+    place-items: center;
 }
 
 .fun-facts-icon {

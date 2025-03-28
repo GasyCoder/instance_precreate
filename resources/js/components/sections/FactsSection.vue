@@ -59,6 +59,20 @@ export default defineComponent({
                 },
                 {
                     id: 2,
+                    numericValue: 50,
+                    suffix: 'k+',
+                    label: 'Rejoigner nous',
+                    icon: 'ri-account-circle-fill',
+                    iconBgClass: 'bg-label-hover-success',
+                    options: {
+                        useEasing: true,
+                        useGrouping: true,
+                        separator: ' ',
+                        decimal: '.',
+                    }
+                },
+                {
+                    id: 3,
                     numericValue: 4,
                     suffix: '.8/5',
                     label: 'Très bien noté',
@@ -72,7 +86,7 @@ export default defineComponent({
                     }
                 },
                 {
-                    id: 3,
+                    id: 4,
                     numericValue: 30,
                     suffix: 'jours',
                     label: 'Essai gratuit',

@@ -3,6 +3,7 @@
       <nav-section />
       <div data-bs-spy="scroll" class="scrollspy-example">
         <hero-section />
+        <discover-section />
         <pricing-section />
         <facts-section />
         <faq-section />

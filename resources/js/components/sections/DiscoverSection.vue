@@ -37,5 +37,9 @@
     </section>
   </template>
 
-
+<script>
+ export default {
+    name: 'DiscoverSection'
+ }
+ </script>
 

@@ -1,7 +1,7 @@
 <template>
     <section id="landingFunFacts" class="section-py landing-fun-facts py-12 my-3">
         <div class="container">
-            <div class="row gx-0 gy-6 gx-sm-6">
+            <div class="row gx-0 gy-6 gx-sm-6 justify-content-center">
                 <div class="container bg-icon-left position-relative">
                     <h5 class="text-center mb-2">
                         <span class="display-5 fs-4 fw-bold">Nos modules pour simplifier votre gestion</span> 
@@ -12,7 +12,7 @@
                 </div>
                 <div v-for="fact in facts"
                      :key="fact.id"
-                     class="col-md-3 col-sm-6 text-center"
+                     class="col-md-4 col-sm-6 text-center"
                      data-aos="fade-up"
                      :data-aos-delay="fact.id * 100">
                      

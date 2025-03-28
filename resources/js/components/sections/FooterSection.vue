@@ -125,12 +125,6 @@ export default {
                     href: 'mailto:contact@erpinnov.com'
                 },
                 {
-                    icon: 'ri-phone-line',
-                    text: '+261 34 00 000 00',
-                    isLink: true,
-                    href: 'tel:+261340000000'
-                },
-                {
                     icon: 'ri-map-pin-line',
                     text: 'Madagascar',
                     isLink: false

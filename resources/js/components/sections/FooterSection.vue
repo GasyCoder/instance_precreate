@@ -101,7 +101,7 @@ export default {
     name: 'FooterSection',
     data() {
         return {
-            description: 'ERP Innov: La Gestion Intelligente à Portée de Main. <br>Simplifiez, Innovez, Propérez',
+            description: 'ERP Innov: La Gestion Intelligente à Portée de Main. Simplifiez, Innovez, Propérez',
             newsletterEmail: '',
             erpLinks: [
                 { url: '#landingFeatures', text: 'Fonctionnalités' },

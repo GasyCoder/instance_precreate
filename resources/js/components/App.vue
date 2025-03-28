@@ -2,8 +2,8 @@
     <div>
       <nav-section />
       <div data-bs-spy="scroll" class="scrollspy-example">
-        <hero-section />
         <discover-section />
+        <hero-section />
         <pricing-section />
         <facts-section />
         <faq-section />

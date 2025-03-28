@@ -84,10 +84,11 @@
     </nav>
  </template>
  <style>
- </style>
-    .innov-text {
+  .innov-text {
         color: #0393da;
     }
+ </style>
+   
  <script>
  export default {
     name: 'NavSection',

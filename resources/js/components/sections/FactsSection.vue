@@ -45,7 +45,7 @@ export default defineComponent({
             facts: [
                 {
                     id: 1,
-                    numericValue: 1000,
+                    numericValue: 7.1,
                     suffix: '+',
                     label: 'Documentation en ligne, chat d\'assistance, ticket réponse sous 24h',
                     icon: 'ri-macbook-line',
@@ -59,7 +59,7 @@ export default defineComponent({
                 },
                 {
                     id: 2,
-                    numericValue: 5,
+                    numericValue: 4/5,
                     suffix: 'M+',
                     label: 'Très bien noté',
                     icon: 'ri-vip-diamond-fil',
@@ -73,8 +73,8 @@ export default defineComponent({
                 },
                 {
                     id: 3,
-                    numericValue: 10000,
-                    suffix: '+',
+                    numericValue: 100,
+                    suffix: '%',
                     label: '30 jours essai gratuit',
                     icon: 'ri-shield-check-fill',
                     iconBgClass: 'bg-label-hover-warning',

@@ -13,9 +13,7 @@
                class="me-3" />
           <span class="text-uppercase">Nos offres</span>
         </h6>
-        <h5 class="text-center mb-2">
-          <span class="display-5 fs-4 fw-bold">Des solutions sur mesure</span> pour votre entreprise
-        </h5>
+    
         <p class="text-center fw-medium mb-10">
           Toutes nos offres incluent une suite complète d'outils pour gérer votre activité.<br />
           Choisissez le plan qui correspond le mieux à vos besoins.
@@ -167,7 +165,6 @@ export default {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     position: relative;
     overflow: visible;
-    margin-top: 3rem;
   }
 
   .pricing-card:hover {

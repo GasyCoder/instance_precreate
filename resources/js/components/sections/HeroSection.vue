@@ -1,5 +1,5 @@
 <template>
-    <section id="landingHero" class="min-vh-50 d-flex align-items-center position-relative overflow-hidden bg-light">
+    <section id="landingHero" class="min-vh-100 d-flex align-items-center position-relative overflow-hidden bg-light">
         <!-- Background Animation -->
         <div class="hero-bg">
             <div class="gradient-blob blob-1"></div>

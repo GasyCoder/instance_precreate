@@ -1,5 +1,5 @@
 <template>
-    <section class="section-py bg-body">
+    <section id="landingHero" class="min-vh-100 d-flex align-items-center position-relative overflow-hidden bg-light">
       <div class="container bg-icon-left position-relative">
         <img src="/assets/img/front-pages/icons/bg-left-icon-light.png"
              alt="section icon"

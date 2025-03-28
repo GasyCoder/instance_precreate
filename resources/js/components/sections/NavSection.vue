@@ -53,7 +53,7 @@
                     <li>
                         <a href="/login" class="btn btn-primary rounded-pill px-3 px-sm-4">
                             <i class="tf-icons ri-user-line me-md-1"></i>
-                            <span class="d-none d-md-inline-block">Connexion</span>
+                            <span class="d-none d-md-inline-block">Connexion2</span>
                         </a>
                     </li>
                 </template>

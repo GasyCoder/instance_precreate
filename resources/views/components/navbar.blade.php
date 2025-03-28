@@ -9,7 +9,7 @@
                              src="{{ asset('client/assets/img/logo/logo.png') }}"
                              alt="Logo">
                         <span class="font-display font-semibold text-lg bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
-                            ERP INNOV
+                            ERP INNOV2
                         </span>
                     </a>
                 </div>

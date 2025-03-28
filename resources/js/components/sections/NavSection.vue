@@ -20,7 +20,10 @@
                              style="width: 40px; height: 40px;"
                              class="img-fluid">
                     </span>
-                    <span class="app-brand-text demo menu-text fw-semibold ms-2">ERP INNOV</span>
+                    <span class="app-brand-text demo menu-text fw-semibold ms-2">
+                        ERP <span class="innov-text">INNOV</span>
+                    </span>
+
                 </a>
             </div>
 
@@ -80,7 +83,11 @@
         </div>
     </nav>
  </template>
-
+ <style>
+ </style>
+    .innov-text {
+        color: #0393da;
+    }
  <script>
  export default {
     name: 'NavSection',

@@ -1,7 +1,7 @@
 <template>
     <section id="landingFunFacts" class="section-py landing-fun-facts py-12 my-3">
         <div class="container">
-            <div class="row gx-0 gy-6 gx-sm-6 justify-content-center">
+            <div class="row gx-0 gy-6 gx-sm-6">
                 <div class="container bg-icon-left position-relative">
                     <h5 class="text-center mb-2">
                         <span class="display-5 fs-4 fw-bold">Nos modules pour simplifier votre gestion</span> 

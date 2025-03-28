@@ -1,5 +1,5 @@
 <template>
-    <section class="section-py bg-body landing-pricing">
+    <section class="section-py bg-body ">
       <div class="container bg-icon-left position-relative">
         <img src="/assets/img/front-pages/icons/bg-left-icon-light.png"
              alt="section icon"

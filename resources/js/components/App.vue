@@ -5,6 +5,7 @@
         <hero-section />
         <discover-section />
         <pricing-section />
+        <module-section />
         <facts-section />
         <faq-section />
         <CTASection />
@@ -27,6 +28,7 @@ import CTASection from './sections/CTASection.vue'
 import FooterSection from './sections/FooterSection.vue'
 import ScrollSection from './sections/ScrollSection.vue'
 import DiscoverSection from './sections/DiscoverSection.vue'
+import ModuleSection from './sections/ModuleSection.vue'
 
 export default {
     name: 'App',
@@ -35,6 +37,7 @@ export default {
         HeroSection,
         DiscoverSection,
         PricingSection,
+        ModuleSection,
         FactsSection,
         FaqSection,
         CTASection,

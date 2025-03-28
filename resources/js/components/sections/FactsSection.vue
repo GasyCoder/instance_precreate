@@ -61,8 +61,8 @@ export default defineComponent({
                     id: 2,
                     numericValue: 5,
                     suffix: 'M+',
-                    label: 'Documents traités',
-                    icon: 'ri-file-list-3-line',
+                    label: 'Très bien noté',
+                    icon: 'ri-vip-diamond-fil',
                     iconBgClass: 'bg-label-hover-success',
                     options: {
                         useEasing: true,
@@ -76,7 +76,7 @@ export default defineComponent({
                     numericValue: 10000,
                     suffix: '+',
                     label: '30 jours essai gratuit',
-                    icon: 'ri-group-line',
+                    icon: 'ri-shield-check-fill',
                     iconBgClass: 'bg-label-hover-warning',
                     options: {
                         useEasing: true,

@@ -21,16 +21,9 @@
                     </span>
 
                     <h2 class="fw-bold mb-0 fun-facts-text">
-                        <count-up
-                            :startVal="0"
-                            :endVal="fact.numericValue"
-                            :duration="2.5"
-                            :options="fact.options"
-                            @end="onCountFinished(fact)"
-                        >
-                            <template #suffix>{{ fact.suffix }}</template>
-                        </count-up>
+                        {{ fact.suffix}}
                     </h2>
+                    
                     <h6 class="mb-0 text-body">{{ fact.label }}</h6>
                 </div>
             </div>

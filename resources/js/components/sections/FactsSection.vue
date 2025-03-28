@@ -1,5 +1,5 @@
 <template>
-    <section id="landingFunFacts" class="section-py landing-fun-facts py-12 my-4">
+    <section id="landingFunFacts" class="section-py landing-fun-facts py-12 my-3">
         <div class="container">
             <div class="row gx-0 gy-6 gx-sm-6">
                 <div v-for="fact in facts"
@@ -73,9 +73,9 @@ export default defineComponent({
                 },
                 {
                     id: 3,
-                    numericValue: 100,
-                    suffix: '%',
-                    label: '30 jours essai gratuit',
+                    numericValue: 30,
+                    suffix: 'jours',
+                    label: 'Essai gratuit',
                     icon: 'ri-shield-check-fill',
                     iconBgClass: 'bg-label-hover-warning',
                     options: {

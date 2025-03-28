@@ -7,7 +7,7 @@
                         <span class="display-5 fs-4 fw-bold">Nos modules pour simplifier votre gestion</span> 
                     </h5>
                     <p class="text-center fw-medium mb-10">
-                        Des outils adaptés pour gagner du temps et répondre à vos besoins
+                        Des outils adaptés pour gagner du temps et répondre à vos
                     </p>
                 </div>
                 <div v-for="fact in facts"
@@ -23,6 +23,7 @@
                     <h2 class="fw-bold mb-0 fun-facts-text">
                         <count-up
                             :startVal="0"
+                            :endVal="fact.numericValue"
                             :duration="2.5"
                             :options="fact.options"
                             @end="onCountFinished(fact)"
@@ -53,6 +54,7 @@ export default defineComponent({
             facts: [
                 {
                     id: 1,
+                    numericValue: null,
                     suffix: 'CRM & Ventes',
                     label: 'Documentation en ligne, chat d\'assistance, ticket réponse sous 24h',
                     icon: 'ri-macbook-line',
@@ -92,6 +94,7 @@ export default defineComponent({
                 },
                 {
                     id: 4,
+                    numericValue: 30,
                     suffix: 'jours',
                     label: 'Essai gratuit',
                     icon: 'ri-shield-check-fill',

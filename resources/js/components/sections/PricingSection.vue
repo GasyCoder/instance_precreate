@@ -77,7 +77,7 @@ export default {
         {
           id: 1,
           name: 'Solo Basic',
-          price: '5,25',
+          price: '5.00',
           priceLocal: '25 500 MGA',
           featured: false,
           features: [
@@ -94,8 +94,8 @@ export default {
         {
           id: 2,
           name: 'Solo Standard',
-          price: '15,50',
-          priceLocal: '77 500 MGA',
+          price: '8.00',
+          priceLocal: '40.000 MGA',
           featured: true,
           features: [
             'Modules Artisan',
@@ -108,8 +108,8 @@ export default {
         {
           id: 3,
           name: 'Premium',
-          price: '45,00',
-          priceLocal: '225 000 MGA',
+          price: '12.00',
+          priceLocal: '60.000 MGA',
           featured: false,
           features: [
             'Modules Standard',

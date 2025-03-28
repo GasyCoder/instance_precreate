@@ -8,7 +8,7 @@
                         <img src="{{ asset('client/assets/img/logo/logo.png') }}"
                             alt="Logo ERP INNOV"
                             class="w-10 h-10 object-contain">
-                        <span class="text-xl font-bold text-gray-900">ERP INNOV</span>
+                        <span class="text-xl font-bold text-gray-900">ERP INNOV2</span>
                     </a>
                 </div>
 

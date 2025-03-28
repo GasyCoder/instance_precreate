@@ -47,7 +47,7 @@ export default defineComponent({
                     numericValue: 1000,
                     suffix: '+',
                     label: 'Entreprises actives',
-                    icon: 'ri-bi-laptop',
+                    icon: 'ri-laptop',
                     iconBgClass: 'bg-label-hover-primary',
                     options: {
                         useEasing: true,

@@ -45,8 +45,8 @@ export default defineComponent({
             facts: [
                 {
                     id: 1,
-                    numericValue: 7.1,
-                    suffix: '+',
+                    numericValue: 7,
+                    suffix: '.1k+',
                     label: 'Documentation en ligne, chat d\'assistance, ticket réponse sous 24h',
                     icon: 'ri-macbook-line',
                     iconBgClass: 'bg-label-hover-primary',
@@ -59,8 +59,8 @@ export default defineComponent({
                 },
                 {
                     id: 2,
-                    numericValue: 4/5,
-                    suffix: 'M+',
+                    numericValue: 4,
+                    suffix: '.8/5',
                     label: 'Très bien noté',
                     icon: 'ri-vip-diamond-fil',
                     iconBgClass: 'bg-label-hover-success',

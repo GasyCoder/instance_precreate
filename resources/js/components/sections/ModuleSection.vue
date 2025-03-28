@@ -101,7 +101,7 @@ export default defineComponent({
                 {
                     id: 5,
                     suffix: 'Ressources Humaines',
-                    label: 'Noter solution simplifie la gestion de vos RH avecdes outils intuitifs',
+                    label: 'Noter solution simplifie la gestion de vos RH avec des outils intuitifs',
                     icon: 'ri-account-circle-fill',
                     iconBgClass: 'bg-label-hover-warning',
                     options: {

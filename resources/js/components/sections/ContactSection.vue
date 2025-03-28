@@ -97,11 +97,7 @@
                                     <!-- Téléphone -->
                                     <div class="col-md-6">
                                         <div class="form-floating form-floating-outline custom-input">
-                                            <input type="tel"
-                                                class="form-control form-control-lg rounded-3 border-2"
-                                                id="basic-default-phone"
-                                                v-model="formData.phone"
-                                                placeholder="+261 34 00 000 00" />
+                                            
                                             <label for="basic-default-phone" class="text-muted">
                                                 <i class="ri-phone-line me-2"></i>Téléphone
                                             </label>

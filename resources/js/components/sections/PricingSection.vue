@@ -84,7 +84,7 @@ export default {
             'Gestion des stocks',
             'CRM',
             'Devis et facturation',
-            'Comptabilité'
+            'Comptabilité simple'
           ],
           description: "Idéal pour les indépendants ou petites entreprises avec des besoins simples.",
           buttonText: 'Essayer gratuitement'
@@ -96,9 +96,10 @@ export default {
           priceLocal: '40.000 MGA',
           featured: true,
           features: [
-            'Modules Artisan',
-            'Gestion avancée des utilisateurs',
-            'Rapports et statistiques'
+            'Modules Basic',
+            'Rapports et statistiques',
+            'CRM',
+            'Email integré'
           ],
           description: "Pour les petites entreprises nécessitant une gestion avancée.",
           buttonText: 'Démarrer maintenant'
@@ -112,10 +113,10 @@ export default {
           features: [
             'Modules Standard',
             'Email intégré',
-            'Calculs automatisés des coûts et marges',
+            'Comptabilité analytique',
             'Suivi de temps',
-            'Gestion multi-devises',
-            'Support prioritaire'
+            'KPI Automatique',
+            'Mutli-devises'
           ],
           description: "Offre complète pour les entreprises ayant des besoins avancés et une gestion d\u0027équipe.",
           buttonText: 'Contacter un commercial'
@@ -165,6 +166,7 @@ export default {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     position: relative;
     overflow: visible;
+    margin-top: 3rem;
   }
 
   .pricing-card:hover {

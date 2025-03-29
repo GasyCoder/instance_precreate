@@ -61,9 +61,9 @@ export default defineComponent({
                 },
                 {
                     id: 2,
-                    suffix: 'Marketing',
-                    label: 'Bostez votre stratégie Marketing avec des outils performants',
-                    icon: 'ri-account-circle-fill',
+                    suffix: 'Comptabilité',
+                    label: 'Gérer de manière autonome votre comptabilité',
+                    icon: 'ri-bank-line',
                     iconBgClass: 'bg-label-hover-success',
                     options: {
                         useEasing: true,

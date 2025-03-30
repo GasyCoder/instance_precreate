@@ -54,12 +54,12 @@
             <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <template v-if="!auth">
                     <li>
-                        <a href="/login" class="btn btn-primary rounded-pill px-3 px-sm-4 mx-2" style="background-color: #FF8C00; border-color: #FF8C00; color: white;"  data-bs-toggle="tooltip" data-bs-placement="top" title="Déjà un compte, connectez-vous">
+                        <a href="/login" class="btn btn-primary rounded-pill px-3 px-sm-4 mx-2"   data-bs-toggle="tooltip" data-bs-placement="top" title="Déjà un compte, connectez-vous">
                             <i class="tf-icons ri-user-line me-md-1"></i>
                             <span class="d-none d-md-inline-block">Connexion</span>
                         </a>
                         
-                        <a href="/inscription" class="btn btn-primary rounded-pill px-3 px-sm-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Inscrivez-vous maintenant et profitez d'un essai gratuit de 14 jours">
+                        <a href="/inscription" class="btn btn-primary rounded-pill px-3 px-sm-4" style="background-color: #FF8C00; border-color: #FF8C00; color: white;" data-bs-toggle="tooltip" data-bs-placement="top" title="Inscrivez-vous maintenant et profitez d'un essai gratuit de 14 jours">
                             <i class="tf-icons ri-user-add-line me-md-1"></i>
                             <span class="d-none d-md-inline-block">Inscription</span>
                         </a>

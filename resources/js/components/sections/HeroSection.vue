@@ -14,16 +14,20 @@
                     <!-- Title -->
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
                         
-                        <span class="gradient-text">Nos solutions</span>
-                        <br>pour votre<br>
+                        <span class="gradient-text">Nos solutions</span> adaptées
+                        <br>pour votre
                         <span class="highlight-text"> organisation</span>
                     </h1>
 
                     <!-- Description -->
                     <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
-                        Que vous soyez entrepreneur individuel, PME en pleine croissance ou grande entreprise, ou même association ou administration. 
-                        ERP INNOV a la solution adaptée à vos besoins. 
-                        <span class="text-primary">Explorez notre gamme d'outils de gestion et notre catalogue de formations conçus pour propulser votre entreprise vers le succès.</span>.
+                        Découvrez comment ERP INNOV peut transformer votre activité. 
+                        Que vous soyez entrepreneur individuel, TPE/PME en croissance, grande entreprise, association ou administration, nous vous offrons des solutions adaptées qui permettent :
+                        <ul>
+                            <li><b>Réduction des coûts opérationnels</b>: Optimisez vos dépenses et améliorez votre rentabilité.</li>
+                            <li><b>Optimisation de la gestion</b>: Optimisez vos dépenses et améliorez votre rentabilité.</li>
+                            <li><b>Croissance accélérée</b>: Adoptez des outils performants pour soutenir votre développement.</li>
+                        </ul>
                     </p> 
 
                     <!-- CTA Buttons -->

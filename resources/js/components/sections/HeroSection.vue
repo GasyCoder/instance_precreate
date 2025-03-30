@@ -14,23 +14,22 @@
                     <!-- Title -->
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
                         
-                        <span class="gradient-text">Découvez nos solutionS</span>
-                        pour
-                        <span class="highlight-text">votre organisation</span>
+                        <span class="gradient-text">Nos solutions</span>
+                        <br>pour votre<br>
+                        <span class="highlight-text"> organisation</span>
                     </h1>
 
-                    <!-- Description -->
+                    <!-- Description 
                     <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
-                        <span class="text-emphasis">Quel que soit votre organisation</span>
-                        que vous soyez entrepreneur individuel, PME en pleine croissance ou grande entreprise, ou même association ou administration. 
+                        Que vous soyez entrepreneur individuel, PME en pleine croissance ou grande entreprise, ou même association ou administration. 
                         ERP INNOV a la solution adaptée à vos besoins. 
                         <span class="text-primary">Explorez notre gamme d'outils de gestion et notre catalogue de formations conçus pour propulser votre entreprise vers le succès.</span>.
-                    </p>
+                    </p> -->
 
                     <!-- CTA Buttons -->
                     <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">
                         <a href="/login" class="btn-primary">
-                            <span>Commencer maintenant</span>
+                            <span>En savoir plus, inscription gratuite</span>
                             <i class="ri-arrow-right-line ms-2"></i>
                         </a>
                         <a href="#landingCTA" class="btn-secondary">
@@ -201,7 +200,7 @@ export default {
 }
 
 .highlight-text {
-    color: #1e40af;
+    color: #FF8C00;
 }
 
 .hero-description {

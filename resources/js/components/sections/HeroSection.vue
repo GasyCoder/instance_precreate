@@ -54,7 +54,7 @@
 
                         <div class="stats-card stats-card-2">
                             <div class="stats-indicator primary"></div>
-                            <span>98% Satisfaction</span>
+                            <span>35% d'économies sur vos coûts</span>
                         </div>
                     </div>
                 </div>

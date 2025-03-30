@@ -81,7 +81,6 @@ export default {
           features: [
             'Gestion des tiers',
             'Gestion des produits',
-            'Gestion des stocks',
             'CRM',
             'Devis et facturation',
             'Comptabilité simple'
@@ -98,7 +97,7 @@ export default {
           features: [
             'Modules Basic',
             'Rapports et statistiques',
-            'CRM',
+            'Gestion des stocks',
             'Email integré'
           ],
           description: "Pour les petites entreprises nécessitant une gestion avancée.",

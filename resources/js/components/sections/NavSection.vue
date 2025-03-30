@@ -54,15 +54,20 @@
             <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <template v-if="!auth">
                     <li>
-                        <a href="/login" class="btn btn-primary rounded-pill px-3 px-sm-4 mx-2"   data-bs-toggle="tooltip" data-bs-placement="top" title="Déjà un compte, connectez-vous">
+                        <a href="/login" class="btn btn-login rounded-pill px-3 px-sm-4 mx-2"  
+                        data-bs-toggle="tooltip" data-bs-placement="top" 
+                        title="Déjà un compte, connectez-vous">
                             <i class="tf-icons ri-user-line me-md-1"></i>
                             <span class="d-none d-md-inline-block">Connexion</span>
                         </a>
-                        
-                        <a href="/inscription" class="btn btn-primary rounded-pill px-3 px-sm-4" style="background-color: #FF8C00; border-color: #FF8C00; color: white;" data-bs-toggle="tooltip" data-bs-placement="top" title="Inscrivez-vous maintenant et profitez d'un essai gratuit de 14 jours">
+
+                        <a href="/inscription" class="btn btn-inscription rounded-pill px-3 px-sm-4 mx-2"  
+                        data-bs-toggle="tooltip" data-bs-placement="top" 
+                        title="Inscrivez-vous maintenant et profitez d'un essai gratuit de 14 jours">
                             <i class="tf-icons ri-user-add-line me-md-1"></i>
                             <span class="d-none d-md-inline-block">Inscription</span>
                         </a>
+
                     </li>
                 </template>
                 <template v-else>
@@ -92,6 +97,34 @@
   .innov-text {
         color: #0393da;
     }
+    /* Style du bouton Connexion */
+    .btn-login {
+        background-color: #0d6efd; /* Bleu */
+        border: 2px solid #0d6efd;
+        color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-login:hover {
+        background-color: white;
+        color: #0d6efd;
+        border: 2px solid #0d6efd;
+    }
+
+    /* Style du bouton Inscription */
+    .btn-inscription {
+        background-color: #FF8C00; /* Orange */
+        border: 2px solid #FF8C00;
+        color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-inscription:hover {
+        background-color: white;
+        color: #FF8C00;
+        border: 2px solid #FF8C00;
+    }
+
  </style>
    
  <script>

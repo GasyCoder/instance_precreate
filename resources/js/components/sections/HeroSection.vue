@@ -19,12 +19,12 @@
                         <span class="highlight-text"> organisation</span>
                     </h1>
 
-                    <!-- Description 
+                    <!-- Description -->
                     <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
                         Que vous soyez entrepreneur individuel, PME en pleine croissance ou grande entreprise, ou même association ou administration. 
                         ERP INNOV a la solution adaptée à vos besoins. 
                         <span class="text-primary">Explorez notre gamme d'outils de gestion et notre catalogue de formations conçus pour propulser votre entreprise vers le succès.</span>.
-                    </p> -->
+                    </p> 
 
                     <!-- CTA Buttons -->
                     <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">

@@ -13,8 +13,8 @@
                 <div class="col-lg-6 hero-content" data-aos="fade-up">
                     <!-- Title -->
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
-                        Découvrez
-                        <span class="gradient-text">nos solution</span>pour
+                        
+                        <span class="gradient-text"> Découvrez nos solution</span>pour
                         <span class="highlight-text">votre organisation</span>
                     </h1>
 

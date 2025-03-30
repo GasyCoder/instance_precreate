@@ -14,24 +14,23 @@
                     <!-- Title -->
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
                         
-                        <span class="gradient-text"> Découvrez nos solution</span>pour
-                        <span class="highlight-text">votre organisation</span>
+                        <span class="gradient-text">Solution SaaS</span>
+                        complète pour
+                        <span class="highlight-text">votre entreprise</span>
                     </h1>
 
                     <!-- Description -->
                     <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
-                        <span class="text-emphasis">
-                            Quel que soit votre organisation, que vous soyez entrepreneur individuel, PME en pleine croissance ou grande entreprise, ou même association ou administration. 
-                            ERP INNOV a la solution adaptée à vos besoins. 
-                            Explorez notre gamme d'outils de gestion et notre catalogue de formations conçus pour propulser votre entreprise vers le succès.
-                        </span>
-                        
+                        <span class="text-emphasis">Transformez votre business</span>
+                        sans coder. Notre plateforme offre toutes les fonctionnalités
+                        marketing dont vous avez besoin, avec une
+                        <span class="text-primary">personnalisation en temps réel</span>.
                     </p>
 
                     <!-- CTA Buttons -->
                     <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">
                         <a href="/login" class="btn-primary">
-                            <span>En savoir plus, inscription gratuite</span>
+                            <span>Commencer maintenant</span>
                             <i class="ri-arrow-right-line ms-2"></i>
                         </a>
                         <a href="#landingCTA" class="btn-secondary">

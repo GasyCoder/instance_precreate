@@ -83,7 +83,9 @@ export default {
             'Gestion des produits',
             'CRM',
             'Devis et facturation',
-            'Comptabilité simple'
+            'Comptabilité simple',
+            'Banque',
+            'Caisse'
           ],
           description: "Idéal pour les indépendants ou petites entreprises avec des besoins simples.",
           buttonText: 'Essayer gratuitement'

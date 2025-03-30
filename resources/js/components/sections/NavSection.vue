@@ -58,7 +58,7 @@
                             <i class="tf-icons ri-user-line me-md-1"></i>
                             <span class="d-none d-md-inline-block">Connexion</span>
                         </a>
-                        <br>
+                        
                         <a href="/inscription" class="btn btn-primary rounded-pill px-3 px-sm-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Vous souhaitez profitez d'un essai de 14 jours gratuit, inscrivez-vous maintenant!">
                             <i class="tf-icons ri-user-line me-md-1"></i>
                             <span class="d-none d-md-inline-block">Inscription</span>

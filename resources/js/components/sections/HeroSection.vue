@@ -196,6 +196,7 @@ export default {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     margin-top: -10px;
+    transition: font-size 0.3s ease;
 }
 
 .gradient-text {
@@ -309,6 +310,71 @@ export default {
 
     .hero-buttons {
         justify-content: center;
+    }
+}
+
+/* Ultra larges (par exemple, écrans 4K ou ultra large) */
+@media (min-width: 1920px) {
+    .hero-title {
+        font-size: 4.5rem; /* augmentation pour profiter de l'espace */
+    }
+}
+
+/* Début écran de bureau standard (entre 1200px et 1919px) */
+@media (max-width: 1919px) and (min-width: 1200px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Ecrans moyens ou Laptops (entre 992px et 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+/* Tablettes (entre 768px et 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content {
+        text-align: center;
+        padding: 0 1rem;
+        margin-bottom: 2.5rem;
+    }
+        
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+/* Mobiles (moins de 768px) */
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        text-align: center;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+        
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column; /* éventuel empilement vertical */
     }
 }
 </style>

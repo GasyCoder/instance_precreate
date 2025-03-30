@@ -54,9 +54,13 @@
             <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <template v-if="!auth">
                     <li>
-                        <a href="/login" class="btn btn-primary rounded-pill px-3 px-sm-4">
+                        <a href="/login" class="btn btn-primary rounded-pill px-3 px-sm-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Déjà un compte, connectez-vous">
                             <i class="tf-icons ri-user-line me-md-1"></i>
                             <span class="d-none d-md-inline-block">Connexion</span>
+                        </a>
+                        <a href="/inscription" class="btn btn-primary rounded-pill px-3 px-sm-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Vous souhaitez profitez d'un essai de 14 jours gratuit, inscrivez-vous maintenant!">
+                            <i class="tf-icons ri-user-line me-md-1"></i>
+                            <span class="d-none d-md-inline-block">Inscription</span>
                         </a>
                     </li>
                 </template>
@@ -137,6 +141,11 @@
         }
     }
  }
+
+ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
  </script>
 
  <style scoped>

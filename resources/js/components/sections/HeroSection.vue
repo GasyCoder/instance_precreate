@@ -298,7 +298,7 @@ export default {
 /* Responsive Design */
 @media (max-width: 992px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2em;
     }
 
     .hero-content {

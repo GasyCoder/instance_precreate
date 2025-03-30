@@ -4,9 +4,8 @@
       <div data-bs-spy="scroll" class="scrollspy-example">
         <hero-section />
         <discover-section />
-        <pricing-section />
         <module-section />
-        <facts-section />
+        <pricing-section />
         <faq-section />
         <CTASection />
         <contact-section />

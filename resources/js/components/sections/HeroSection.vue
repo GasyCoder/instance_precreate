@@ -191,10 +191,11 @@ export default {
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    margin-top: -10px;
 }
 
 .gradient-text {
@@ -298,7 +299,7 @@ export default {
 /* Responsive Design */
 @media (max-width: 992px) {
     .hero-title {
-        font-size: 2em;
+        font-size: 2.5rem;
     }
 
     .hero-content {

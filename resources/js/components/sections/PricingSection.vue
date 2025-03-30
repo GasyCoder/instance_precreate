@@ -90,7 +90,7 @@ export default {
         },
         {
           id: 2,
-          name: 'Solo Standard',
+          name: 'Standard',
           price: '8.00',
           priceLocal: '40.000 MGA',
           featured: true,
@@ -111,14 +111,13 @@ export default {
           featured: false,
           features: [
             'Modules Standard',
-            'Email intégré',
             'Comptabilité analytique',
             'Suivi de temps',
             'KPI Automatique',
             'Mutli-devises'
           ],
           description: "Offre complète pour les entreprises ayant des besoins avancés et une gestion d\u0027équipe.",
-          buttonText: 'Contacter un commercial'
+          buttonText: 'Inscrivez vous pour plus de detail'
         }
       ]
     }

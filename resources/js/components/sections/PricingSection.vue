@@ -7,12 +7,12 @@
              data-speed="1" />
 
         <!-- Header Original -->
-        <h6 class="text-center d-flex justify-content-center align-items-center mb-2">
+        <h2 class="text-center d-flex justify-content-center align-items-center mb-2">
           <img src="/assets/img/front-pages/icons/section-tilte-icon.png"
                alt="section title icon"
                class="me-3" />
           <span class="text-uppercase">Nos offres</span>
-        </h6>
+        </h2>
     
         <p class="text-center fw-medium mb-10">
           Toutes nos offres incluent une suite complète d'outils pour gérer votre activité.<br />

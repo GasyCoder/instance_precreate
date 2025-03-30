@@ -62,7 +62,7 @@ export default defineComponent({
                 {
                     id: 2,
                     suffix: 'Comptabilité',
-                    label: 'Gérer de manière autonome votre comptabilité',
+                    label: 'Gérer de manière autonome votre comptabilité simple ou partie double',
                     icon: 'ri-bank-line',
                     iconBgClass: 'bg-label-hover-success',
                     options: {

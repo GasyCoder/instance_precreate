@@ -54,7 +54,7 @@
             <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <template v-if="!auth">
                     <li>
-                        <a href="/login" class="btn btn-primary rounded-pill px-3 px-sm-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Déjà un compte, connectez-vous">
+                        <a href="/login" class="btn btn-primary rounded-pill px-3 px-sm-4 mx-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Déjà un compte, connectez-vous">
                             <i class="tf-icons ri-user-line me-md-1"></i>
                             <span class="d-none d-md-inline-block">Connexion</span>
                         </a>

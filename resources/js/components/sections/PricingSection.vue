@@ -142,6 +142,9 @@ export default {
     height: auto;
  }
 
+.gradient-text {
+  color: #0d6efd;
+}
  .card-body {
   display: flex;
   flex-direction: column;

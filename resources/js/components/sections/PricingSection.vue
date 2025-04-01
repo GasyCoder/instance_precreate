@@ -19,6 +19,10 @@
           Choisissez le plan qui correspond le mieux à vos besoins.
         </p>
 
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">         
+          <span class="gradient-text">SOLO</span> 
+        </h1>
+
         <!-- Le reste du contenu reste identique -->
         <div class="row g-4">
           <div v-for="plan in pricingPlans"
@@ -74,7 +78,7 @@ export default {
       pricingPlans: [
         {
           id: 1,
-          name: 'Solo Basic',
+          name: 'Basic',
           price: '5.00',
           priceLocal: '25 500 MGA',
           featured: false,

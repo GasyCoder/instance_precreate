@@ -24,8 +24,8 @@
         </h1>
 
          <p class="text-center fw-medium mb-10">
-          Toutes nos offres incluent une suite complète d'outils pour gérer votre activité.<br />
-          Choisissez le plan qui correspond le mieux à vos besoins.
+          Que vous soyez artisan, commerçant ou entrepreneur, notre solution ERP-CRM vous aide à gérer efficacement votre activité au quotidien. 
+          De la gestion des clients à la comptabilité, en passant par le suivi des ventes et la gestion d'un site web, nous avons une offre adaptée à vos besoins.
         </p>
 
         <!-- Le reste du contenu reste identique -->
@@ -146,6 +146,8 @@ export default {
  }
 
 .gradient-text {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #0d6efd;
 }
  .card-body {

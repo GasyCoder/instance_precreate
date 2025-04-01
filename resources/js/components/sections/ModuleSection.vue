@@ -4,7 +4,7 @@
             <div class="row gx-0 gy-6 gx-sm-6 justify-content-center">
                 <div class="container bg-icon-left position-relative">
                     <h2 class="text-center mb-2">
-                        <span class="display-5 fs-4 fw-bold">Nos modules pour simplifier votre gestion</span> 
+                        <span class="display-5 fs-4 fw-bold">Simplifier votre gestion</span> 
                     </h2>
                     <p class="text-center fw-medium mb-10">
                         Des outils adaptés pour gagner du temps et répondre à vos besoins

@@ -146,7 +146,6 @@ export default {
  }
 
 .gradient-text {
-  font-size: 1.5rem;
   font-weight: bold;
   color: #0d6efd;
 }

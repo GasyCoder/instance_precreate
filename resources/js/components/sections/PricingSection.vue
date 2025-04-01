@@ -23,6 +23,11 @@
           <span class="gradient-text">SOLO</span> 
         </h1>
 
+         <p class="text-center fw-medium mb-10">
+          Toutes nos offres incluent une suite complète d'outils pour gérer votre activité.<br />
+          Choisissez le plan qui correspond le mieux à vos besoins.
+        </p>
+
         <!-- Le reste du contenu reste identique -->
         <div class="row g-4">
           <div v-for="plan in pricingPlans"
@@ -112,15 +117,13 @@ export default {
         {
           id: 3,
           name: 'Premium',
-          price: '12.00',
-          priceLocal: '60.000 MGA',
+          price: '16.00',
+          priceLocal: '80.000 MGA',
           featured: false,
           features: [
             'Modules Standard',
             'Comptabilité analytique',
-            'Suivi de temps',
-            'KPI Automatique',
-            'Mutli-devises'
+            'Site web synchronisé'
           ],
           description: "Offre complète pour les entreprises ayant des besoins avancés et une gestion d\u0027équipe.",
           buttonText: 'Inscrivez vous pour plus de detail'

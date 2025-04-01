@@ -58,14 +58,14 @@
                         data-bs-toggle="tooltip" data-bs-placement="top" 
                         title="Déjà un compte, connectez-vous">
                             <i class="tf-icons ri-user-line me-md-1"></i>
-                            <span class="d-none d-md-inline-block">Connexion</span>
+                            <span class="d-inline">Connexion</span>
                         </a>
 
                         <a href="/inscription" class="btn btn-inscription rounded-pill px-3 px-sm-4 mx-2"  
                         data-bs-toggle="tooltip" data-bs-placement="top" 
                         title="Inscrivez-vous maintenant et profitez d'un essai gratuit de 14 jours">
                             <i class="tf-icons ri-user-add-line me-md-1"></i>
-                            <span class="d-none d-md-inline-block">Inscription</span>
+                            <span class="d-inline">Inscription</span>
                         </a>
 
                     </li>

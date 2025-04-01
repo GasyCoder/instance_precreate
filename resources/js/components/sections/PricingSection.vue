@@ -19,7 +19,7 @@
           Choisissez le plan qui correspond le mieux à vos besoins.
         </p>
 
-        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">         
+        <h1 class=" text-center hero-title" data-aos="fade-up" data-aos-delay="300">         
           <span class="gradient-text">SOLO</span> 
         </h1>
 
